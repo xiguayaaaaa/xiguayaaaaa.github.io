@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Markdown过长导致页面无法显示问题</title>
+      <link href="/2022/07/05/Markdown%E8%BF%87%E9%95%BF%E5%AF%BC%E8%87%B4%E9%A1%B5%E9%9D%A2%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/"/>
+      <url>/2022/07/05/Markdown%E8%BF%87%E9%95%BF%E5%AF%BC%E8%87%B4%E9%A1%B5%E9%9D%A2%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>Markdown过长导致页面无法显示问题</p><span id="more"></span><h2 id="文章摘要设置"><a href="#文章摘要设置" class="headerlink" title="文章摘要设置"></a>文章摘要设置</h2><p>打开主题配置文件 _config.yml 文件，找到如下：</p><pre><code># Automatically Excerpt. Not recommend.# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.auto_excerpt:  enable: false  length: 150</code></pre><p>把这里的false改为true就可以了在首页启动显示文章预览了，length是显示预览的长度。</p><p>这里我们可以通过在文章使用<code>&lt;!-- more --&gt;</code>标志来精确控制文章的摘要预览，比如这篇文章就是在这个段落的末尾添加了该标志，所以本文在首页的预览就会显示到这个段落为止。</p><p>强烈推荐使用该<code>&lt;!-- more --&gt;</code>标志来控制文章的摘要预览，因为这种方式可以让摘要也按照css文件中的样式来渲染。如果使用了自动摘要的功能，你会发现文章摘要是一大团没有样式的文本，很是难看。</p><h2 id="其他的文章配置"><a href="#其他的文章配置" class="headerlink" title="其他的文章配置"></a>其他的文章配置</h2><pre><code># ---------------------------------------------------------------# Post Settings# ---------------------------------------------------------------# Automatically scroll page to section which is under &lt;!-- more --&gt; mark.# 自动将页面滚动到&lt;!-- more --&gt;标记下的地方。scroll_to_more: false# Automatically saving scroll position on each post/page in cookies.# 自动保存每篇文章或页面上一次滚动的地方。save_scroll: false# Automatically excerpt description in homepage as preamble text.# 自动在首页对文章进行摘要描述作为前言文本。excerpt_description: true# Automatically Excerpt. Not recommend.# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.# 不推荐使用自动摘要。# 请在文章中使用&lt;!-- more --&gt;标志来精确控制摘要长度。auto_excerpt:  enable: true  length: 200# Post meta display settings# 文章元数据展示设置post_meta:  # 文本显示  item_text: true  # 创建时间  created_at: true  # 更新时间  # 这个更新时间有点问题，因为每次重新生成文章/部署时都会刷新更新时间，不建议使用  updated_at: false  # 目录分类  categories: true# Post wordcount display settings# Dependencies: https://github.com/willin/hexo-wordcount# 文章字数展示设置post_wordcount:  # 文本显示  item_text: true  # 文章字数统计  wordcount: true  # 阅读时长  min2read: true  # 站点总字数统计  totalcount: true  # 该post_wordcount的所有设置另起一行显示  separated_meta: true</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题组 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 瞎写的 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringBoot整合Jpa</title>
+      <link href="/2022/07/05/SpringBoot%E6%95%B4%E5%90%88Jpa/"/>
+      <url>/2022/07/05/SpringBoot%E6%95%B4%E5%90%88Jpa/</url>
+      
+        <content type="html"><![CDATA[<p>SpringBoot整合Jpa</p><span id="more"></span><p>1.添加依赖</p><pre><code class="SQL">&lt;dependency&gt;            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;        &lt;/dependency&gt;        &lt;dependency&gt;            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;            &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;        &lt;/dependency&gt;</code></pre><p>2.配置数据源</p><pre><code class="yaml">spring:  datasource:    url: jdbc:mysql://localhost:3306/student?serverTimezone=Asia/Shanghai    username: root    password: root    driver-class-name: com.mysql.cj.jdbc.Driver  jpa:    #打印SQL语句    show-sql: true    #使用测试用例时需要配置该项    properties:      hibernate:        enable_lazy_load_no_trans: true</code></pre><p>3.新建实体类，并建立映射关系</p><pre><code class="java">@Table(name = &quot;student&quot;)@Entity@Datapublic class Student &#123;    @Id    @GeneratedValue(strategy = GenerationType.IDENTITY)    private Integer studentId;    @Column(name = &quot;student_name&quot;)    private String studentName;    @Column(name = &quot;student_gender&quot;)    private String studentGender;    @Column(name = &quot;student_age&quot;)    private String studentAge;&#125;</code></pre><p>@Table：用于表明该实体类对应的是数据库中的哪张表，name属性用于配置表名。</p><p>@Entity：JPA要求实体类上需要标注该注解</p><p>@Id：在标注了@Entity的类上必须有一个字段标注该注解，该注解用于表明标注了此注解的字段是主键。</p><p>@GeneratedValue：用于表明该主键的生成策略，通常和@Id同时出现</p><p>@Column：该注解并不是必须的，通常用于表明该变量对应的数据库表字段，如果字段名称使用经典命名法，而变量名称使用了驼峰命名法，则此注解可以省略</p><h3 id="JpaRepository接口详解"><a href="#JpaRepository接口详解" class="headerlink" title="JpaRepository接口详解"></a>JpaRepository接口详解</h3><pre><code class="sql">public interface JpaRepository&lt;T, ID&gt; extends PagingAndSortingRepository&lt;T, ID&gt;, QueryByExampleExecutor&lt;T&gt; &#123;    //查询所有的数据    List&lt;T&gt; findAll();    //查询所有的数据，并排序，排序的字段及排序方式通过Sort对象指定    List&lt;T&gt; findAll(Sort sort);    //根据ID批量查询    List&lt;T&gt; findAllById(Iterable&lt;ID&gt; ids);    //批量保存    &lt;S extends T&gt; List&lt;S&gt; saveAll(Iterable&lt;S&gt; entities);    //刷新缓存    void flush();    //保存并刷新缓存    &lt;S extends T&gt; S saveAndFlush(S entity);    //批量保存并刷新缓存    &lt;S extends T&gt; List&lt;S&gt; saveAllAndFlush(Iterable&lt;S&gt; entities);    //批量删除    void deleteAllInBatch(Iterable&lt;T&gt; entities);    //通过ID批量删除    void deleteAllByIdInBatch(Iterable&lt;ID&gt; ids);    //等价于删除全部数据    void deleteAllInBatch();    //通过ID查询    T getById(ID id);    //通过示例批量查询    &lt;S extends T&gt; List&lt;S&gt; findAll(Example&lt;S&gt; example);    //通过示例批量查询    &lt;S extends T&gt; List&lt;S&gt; findAll(Example&lt;S&gt; example, Sort sort);&#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringBoot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Json教程</title>
       <link href="/2022/07/04/Json%E6%95%99%E7%A8%8B/"/>
       <url>/2022/07/04/Json%E6%95%99%E7%A8%8B/</url>
@@ -13,7 +63,7 @@
       
       <categories>
           
-          <category> 分组名1 </category>
+          <category> 知识组 </category>
           
       </categories>
       
@@ -32,12 +82,24 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/2022/07/04/hello-world/"/>
-      <url>/2022/07/04/hello-world/</url>
+      <link href="/2022/07/02/hello-world/"/>
+      <url>/2022/07/02/hello-world/</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><span id="more"></span><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
+      <categories>
+          
+          <category> 问题组 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 瞎写的 </tag>
+            
+        </tags>
       
     </entry>
     
