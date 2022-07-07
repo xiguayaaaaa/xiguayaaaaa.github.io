@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>JavaScript对象</title>
+      <link href="/2022/07/07/JavaScript%E5%AF%B9%E8%B1%A1/"/>
+      <url>/2022/07/07/JavaScript%E5%AF%B9%E8%B1%A1/</url>
+      
+        <content type="html"><![CDATA[<p>JavaScript对象</p><span id="more"></span><ul><li><p>什么是对象</p><ul><li>对象是一种复合值，它汇聚多个值（原始值或者是其它对象），并且允许我们按照名称存储和获取这些值。</li><li>对象是一个属性无序的集合，每个属性都有自己的名字和值，只有在对象中，其使用起来与顺序无关，只需要打点即可调用。</li><li>在JavaScript中对象可以从其它对象继承属性。</li><li>JavaScript对象是动态的，即可以动态的添加和删除对象属性。</li></ul></li><li><p>认识对象</p><ul><li>创建自定义对象我们可以通过创建Object实例来实现，然后再给他添加属性和方法（函数）<pre><code class="html">  &lt;script&gt;    let person = new Object();    person.name = &quot;zhangsan&quot;;    person.age = 18;    person.job = &quot;Teacher&quot;;     console.log(this.name+&quot;，年龄&quot;+this.age+&quot;岁，他的工作是：&quot;+this.job);    person.work = function()&#123;&#125;    ---    let person = &#123;    name = &quot;zhangsan&quot;,    age = 18,    job = &quot;Teacher&quot;,    work()&#123;    console.log(this.name+&quot;，年龄&quot;+this.age+&quot;岁，他的工作是：&quot;+this.job);    &#125;    &#125;    &lt;/script&gt;</code></pre></li></ul></li><li><p>属性的类型</p><ul><li><p>JavaScript使用了一些内部特性来描述属性的特征，这些特性由JavaScript实现引擎的规范定义的，所以开发者不能直接在JavaScript中访问这些访问。</p></li><li><p>属性特性分两种</p><ul><li><p>数据属性</p><ul><li><p>数据属性包含一个保存数据值得位置，数据的值会从这个位置中读取，当然也可以写入到这个位置，数据属性有4个特性描述他的行为</p><ul><li>【Configurable】：表示属性是否可以通过delete删除并重新定义，是否可以修改它的特性，以及是否可以把它改为访问器属性。其默认情况下为true</li><li>【Enumerable】：表示属性是否可以通过for-in循环返回，默认情况也为true</li><li>【Writable】：表示属性的值是否可以被修改，其默认值为true</li><li>【Value】：包含属性的实际值，其默认值为undefined</li></ul></li><li><p>这些属性特性我们在定义对象时并不需要显式的添加前三个，而Value特性也会被我们定义，如：name:”zhangsan”</p></li><li><p>如果想要修改这些默认特性，就必须使用Object.defineProperty()方法，这个方法在使用时接收三个参数：要给其添加属性的对象，属性的名称，以及一个描述特性的对象及其参数</p></li></ul></li><li><p>示例</p><pre><code class="html">&lt;!DOCTYPE html&gt;  &lt;html lang=&quot;en&quot;&gt;  &lt;head&gt;   &lt;meta charset=&quot;UTF-8&quot;&gt;   &lt;title&gt;Title&lt;/title&gt;   &lt;script&gt;   let person = &#123;&#125;;   Object.defineProperty(person,&quot;name&quot;,&#123;   writable:false,   value:&quot;王麻子&quot;   &#125;);   console.log(person.name);   person.name = &quot;张金条&quot;;   console.log(person.name);   &lt;/script&gt;  &lt;/head&gt;  &lt;body&gt;  &lt;/body&gt;  &lt;/html&gt;  &lt;html lang=&quot;en&quot;&gt;  &lt;head&gt;   &lt;meta charset=&quot;UTF-8&quot;&gt;   &lt;title&gt;Title&lt;/title&gt;   &lt;script&gt;   let person = &#123;&#125;;   Object.defineProperty(person,&quot;name&quot;,&#123;   // configurable:true,   configurable:false,   value:&quot;王麻子&quot;   &#125;);   console.log(person.name);   delete person.name;   console.log(person.name);   &lt;/script&gt;  &lt;/head&gt;  &lt;body&gt;  &lt;/body&gt;  &lt;/html&gt;</code></pre></li><li><p>访问器属性</p><ul><li><p>访问器属性不包含数据值，它包含一个获取（getter）函数以及一个设置 （setter）函数，不过这两个函数并非必须函数。</p></li><li><p>在读取访问器属性时，程序会自个调用获取函数，也就是说获取函数的主 要任务就是返回一个有效的值</p></li><li><p>访问器属性也有4个特性用了描述它们的行为</p><ul><li>【Configurable】，默认值为true，表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，能否把属性修改为访问器属性</li><li>【Enumerable】，默认值为true，能否通过for-in循环返回属性</li><li>【get】读取这个属性时调用的函数 getter函数</li><li>【set】在为这个属性赋值时调用的函数 setter函数</li></ul></li></ul></li><li><p>以上这些属性也是不能直接定义的，必须通过Object-defineProperty()</p><pre><code class="html">         &lt;html lang=&quot;en&quot;&gt;             &lt;head&gt;             &lt;meta charset=&quot;UTF-8&quot;&gt;             &lt;title&gt;Title&lt;/title&gt;              &lt;script&gt;                      let book = &#123;                      name:&quot;七侠五义&quot;,                      price:1                      &#125;;                      book.name = &quot;斗破苍穹&quot;;                      console.log(book.name);                      Object.defineProperty(book,&quot;name&quot;,&#123;                      get()&#123;                      return this.name;                 &#125;,                 set(newValue)&#123;                     this.name = newValue;                     &#125;                 &#125;);             &lt;/script&gt;             &lt;/head&gt;             &lt;body&gt;             &lt;/body&gt;             &lt;/html&gt;</code></pre></li></ul></li></ul></li></ul><ul><li><p>对象合并</p><ul><li> 在开发JavaScript时我们会把多个对象合并使用</li><li> 具体来说就是把一个对象的所有属性复制到了目标对象上，这种方式也被称之为混入，通过对象的合并我们可以增强对象功能</li><li>JavaScript专门为合并对象提供了一个Object.assign()方法，这个方法接收一个目标对象和一个或多个其它对象（源对象），然后将每个源对象中自有属性复制到目标对象<pre><code class="html">    &lt;html lang=&quot;en&quot;&gt;    &lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;title&gt;Title&lt;/title&gt;    &lt;script&gt;        //目标对象        Obj1 = &#123;name:&quot;老八&quot;&#125;;        //源对象        Obj2 = &#123;name:&quot;老八&quot;&#125;;        //把2复制到目标对象中        result = Object.assign(Obj1,Obj2);        console.log(Obj1 === result)        console.log(Obj2 === result)        console.log(result)    &lt;/script&gt;    &lt;/head&gt;    &lt;body&gt;    &lt;/body&gt;    &lt;/html&gt;</code></pre></li></ul></li><li><p>增强的对象语法</p><ul><li><p>ES6位对象定义了很多定义对象及其操作对象的语法特性，这些特性可以极大程度提高对象处理的方便程度</p></li><li><p>属性值得简写</p><ul><li>在给对象添加值时我们可以引用变量<pre><code class="html">      &lt;script&gt;          let username= &quot;sanlvzi&quot;;          let person = &#123;          username:username          &#125;;          console.log(person)      &lt;/script&gt;</code></pre></li><li>还能简写（以下这种情况必须时变量名域对象的属性名相同才可以这么写）<pre><code class="html">  &lt;script&gt;  let username= &quot;sanlvzi&quot;;  username  &#125;;  let person = &#123;  console.log(person)  &lt;/script&gt;</code></pre></li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端组 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringBoot笔记(一）</title>
+      <link href="/2022/07/07/SpringBoot%E7%AC%94%E8%AE%B0(%E4%B8%80%EF%BC%89/"/>
+      <url>/2022/07/07/SpringBoot%E7%AC%94%E8%AE%B0(%E4%B8%80%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>SpringBoot笔记(一）</p><span id="more"></span><p>处理静态资源</p><hr><p>在springboot中，可以使用以下方式处理静态资源：</p><ul><li>webjars：localhost:8080/webjars/…<br>百度输入webjars官网，可以找到很多资源的maven依赖方式，如jQuery，bootstrap等等。</li><li>public，static，/**，resource：localhost:8080/<br>其中优先级：resource&gt;static(默认)&gt;public。</li></ul><p>首页订制</p><hr><ul><li>我们一般通过controller跳转到index首页，将index.html放入templates包中，<br>需导入模板引擎thymeleaf依赖。</li></ul><p>模板引擎thymeleaf</p><hr><ul><li>我们要使用thymeleaf，需要在html文件中导入命名空间的<br>约束<code>&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</code>，方便提示。</li></ul><p>thymeleaf在html标签中输入th无提示的问题解决</p><hr><ul><li>听说IDEA默认的thymeleaf版本是2.X版本，2.X版本有不少的功能缺陷，<br>但是据说现在IDEA提高了默认的thymeleaf版本，导入前文的依赖后3.X版本<br>的会一同下载下来，并没有去考证，死马当做活马医，手动升级了版本，<br>在pom.xml文件的 properties 标签中添加以下代码：<br>`<properties><pre><code>   &lt;thymeleaf.version&gt;3.0.11.RELEASE&lt;/thymeleaf.version&gt;   &lt;thymeleaf-layout-dialect.version&gt;2.1.1&lt;/thymeleaf-layout-dialect.version&gt;</code></pre></properties>`<br><a href="https://blog.csdn.net/qq_43446147/article/details/108000547">原文连接</a></li></ul><p>前端页面模板下载</p><ul><li><a href="https://www.php.cn/">连接</a> “首页-&gt;资源下载”</li></ul><p>首页配置</p><ul><li>所有页面的静态资源都需要使用thymeleaf接管,@{}.</li></ul><p>页面国际化</p><ul><li>(国际化:internationalization) i与n之间有18个字母,故称i18n,<br>在resource下创建i18n文件夹.</li><li>三个文件:默认/英文/中文 可以一个页面实现多个语言编码</li><li>在application.properties中添加<code>spring.messages.basename=i18n.文件名</code></li><li>国际化页面前端页面用#{}取值.</li><li>切换中文/English config中创建类实现接口LocaleResolver,配置解析请求.</li><li>步骤: <ul><li>我们需要配置i18n文件</li><li>我们如果需要在项目中进行按钮自动切换,我们需要自定义一个组件LocaleResolver</li><li>记得将自己写的组件配置到spring容器@Bean</li></ul></li></ul><p>登录＋拦截器</p><ul><li>拦截未登录直接通过地址访问管理员页面</li></ul><p>定义Data的输入格式</p><ul><li>如果不做如何处理,日期格式输入格式为<code>    Wed Apr 27 22:58:12 CST 2022</code></li><li>我们可以使用dates.format来定义日期的输出格式，如<br>  <code>#dates.format(emp.getBirth(),&#39;yyyy-mm-dd&#39;)</code><br>  yyyy-mm-dd hh-mm-ss表示年-月-日 时-分-秒</li><li>也可在application.properties中加入<code>spring.jackson.date-format=yyyy-mm-dd</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringBoot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo+Github搭建博客</title>
       <link href="/2022/07/05/Hexo-Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
       <url>/2022/07/05/Hexo-Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
@@ -102,7 +152,7 @@
       <link href="/2022/07/02/hello-world/"/>
       <url>/2022/07/02/hello-world/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><span id="more"></span><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>!</p><span id="more"></span><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
       <categories>
