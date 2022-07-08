@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+  <title>(八)布局 - Hexo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+
+  <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
+  <meta name="description" content="(八)布局">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(八)布局">
+<meta property="og:url" content="https://xiguayaaaaa.github.io/2022/07/08/%E5%85%AB-%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="(八)布局">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/22038106/1630552648013-f7370ed0-1b2e-4490-8032-f72bab65f024.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_Qnl0ZeWtpumZog==,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10">
+<meta property="article:published_time" content="2022-07-08T11:43:48.000Z">
+<meta property="article:modified_time" content="2022-07-08T12:03:34.121Z">
+<meta property="article:author" content="xiguayaaaaa">
+<meta property="article:tag" content="知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/22038106/1630552648013-f7370ed0-1b2e-4490-8032-f72bab65f024.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_Qnl0ZeWtpumZog==,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+  <link rel="stylesheet" href="/lib/fancybox/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1657284942227">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/images/background/xiaomai.jpg)"></div>
+    <div class="nexmoe-small" style="background-image: url(/images/background/lihui1.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="xiguayaaaaa" class="mdui-btn mdui-btn-icon"><img src="/images/head/call.jpg" alt="xiguayaaaaa"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="xiguayaaaaa">
+            <img src="/images/head/call.jpg" alt="xiguayaaaaa" alt="xiguayaaaaa">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div class="nexmoe-count-item"><span>文章</span>19 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>3<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>5<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-meishi"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-hanbao1"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://simon-yian.com" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-cola"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  
+<!-- 站内搜索 -->
+
+<div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search" >
+        <form id="search-form">
+            <label><input type="text" id="local-search-input" name="q" results="0" placeholder="站内搜索" class="input form-control" autocomplete="off" autocorrect="off"/></label>
+            <!-- 清空/重置搜索框 -->
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+        </form>
+    </div>
+    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+    <!-- <p class='no-result'></p> 无匹配时显示，注意在 CSS 中设置默认隐藏 -->
+</div>
+
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="mailto:1281238306@qq.com" target="_blank" mdui-tooltip="{content: 'mail'}" style="color: rgb(249,8,8);background-color: rgba(249,8,8,.1);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a><a class="mdui-ripple" href="https://i.csdn.net/#/user-center/profile?spm=1011.2124.3001.5111" target="_blank" mdui-tooltip="{content: 'CSDN'}" style="color: rgb(199,29,35);background-color: rgba(199,29,35,.1);">
+            <i class="nexmoefont icon-csdn"></i>
+        </a><a class="mdui-ripple" href="https://www.cnblogs.com/" target="_blank" mdui-tooltip="{content: '博客园'}" style="color: rgb(66, 214, 29);background-color: rgba(66, 214, 29, .1);">
+            <i class="nexmoefont icon-bokeyuan"></i>
+        </a><a class="mdui-ripple" href="https://github.com/xiguayaaaaa/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/兴趣组/">兴趣组</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/前端组/">前端组</a>
+          <span class="category-list-count">12</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/知识组/">知识组</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/问题组/">问题组</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/%E7%9E%8E%E5%86%99%E7%9A%84/" style="font-size: 15px;">瞎写的</a> <a href="/tags/%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">知识</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">19</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 xiguayaaaaa
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/tangyuxian/hexo-theme-tangyuxian" target="_blank">Tangyuxian</a><br/>
+        <a href="http://beian.miit.gov.cn" target="_blank">123456789</a><br/>
+        
+        <div style="font-size: 12px">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br />
+            本站访客数<a id="busuanzi_value_site_uv"></a>人次
+        </div>
+        
+        
+    </div>
+
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    
+        <div class="nexmoe-post-cover" style="padding-bottom: 26.666666666666668%;">
+            <img data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.php.cn%2Fupload%2Farticle%2F000%2F000%2F029%2F5de09308e9912367.jpg&refer=http%3A%2F%2Fimg.php.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659868948&t=32927ec46d42bc175fbc4ba757b64c70" data-sizes="auto" alt="(八)布局" class="lazyload">
+            <h1>(八)布局</h1>
+        </div>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年07月08日</a>
+    <a><i class="nexmoefont icon-areachart"></i>4.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 22 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
+            
+        </div>
+
+        <article>
+            <p> (八)布局<br> <span id="more"></span></p>
+<h2 id="8-1-布局"><a href="#8-1-布局" class="headerlink" title="8.1 布局"></a>8.1 布局</h2><p>布局是为了对整个网页进行排版，把网站内容安排在多个列中，用以丰富网页背景，色彩，内容等网页外观，就跟房子装修一样，我们需要把我们的房子装修漂漂亮亮的而且功能实用，总不能把床放在卫生间，把马桶放在燃气灶旁边吧</p>
+<p>我么在制作前期需要对UI设计师提供的设计图片进行布局分析，明确那个模块在什么位置，我们需要通过布局将模块创建出来，放在它该有的位置上，然后对模块进行内容填充</p>
+<h2 id="8-2-入门布局–圣杯布局"><a href="#8-2-入门布局–圣杯布局" class="headerlink" title="8.2 入门布局–圣杯布局"></a>8.2 入门布局–圣杯布局</h2><ul>
+<li>入门图</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.nlark.com/yuque/0/2021/png/22038106/1630552648013-f7370ed0-1b2e-4490-8032-f72bab65f024.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_Qnl0ZeWtpumZog==,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="img" class="lazyload"></p>
+<p>示例代码</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        *&#123;
+            margin: 0 auto;
+        &#125;
+        .top&#123;
+            width: 100%;
+            height: 80px;
+            margin-bottom: 10px;
+        &#125;
+        .middle&#123;
+            width: 100%;
+            height: 500px;
+            margin-bottom: 10px;
+        &#125;
+        .middle div&#123;
+            float: left;
+        &#125;
+        .middle div:nth-child(1),.middle div:nth-last-child(1)&#123;
+            width: 30%;
+            height: 100%;
+            background-color: #339fff;
+        &#125;
+        .middle div:nth-child(2)&#123;
+            width: 40%;
+            height: 100%;
+            background-color: #2279ee;
+        &#125;
+        .bottom&#123;
+            width: 100%;
+            height: 80px;
+        &#125;
+        .color1&#123;
+            background-color: #339fff;
+        &#125;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!--顶部--&gt;
+    &lt;div class=&quot;top color1&quot;&gt;&lt;/div&gt;
+    &lt;!--中部--&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+        &lt;!--左--&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;!--中--&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;!--右--&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--底部--&gt;
+    &lt;div class=&quot;bottom color1&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="8-3-弹性布局"><a href="#8-3-弹性布局" class="headerlink" title="8.3 弹性布局"></a>8.3 弹性布局</h2><h4 id="8-3-1-传统布局与弹性布局"><a href="#8-3-1-传统布局与弹性布局" class="headerlink" title="8.3.1 传统布局与弹性布局"></a>8.3.1 传统布局与弹性布局</h4><ol>
+<li>传统布局方法遵循文档流的模式，依赖浮动，相较于一些特殊布局，不容易实现（如：垂直居中效果）</li>
+<li>弹性布局诞生于2009年，弹性布局也称之为flex布局</li>
+<li>弹性布局可以完整的响应式的实现各种页面布局</li>
+</ol>
+<h4 id="8-3-2-在使用弹性布局时需要知道的两个概念"><a href="#8-3-2-在使用弹性布局时需要知道的两个概念" class="headerlink" title="8.3.2 在使用弹性布局时需要知道的两个概念"></a>8.3.2 在使用弹性布局时需要知道的两个概念</h4><ol>
+<li>容器：需要添加弹性布局的父元素</li>
+<li>项目：弹性布局容器中的每一个子元素称之为项目</li>
+</ol>
+<h4 id="8-3-3-在使用弹性布局时需要了解的两个基本方向"><a href="#8-3-3-在使用弹性布局时需要了解的两个基本方向" class="headerlink" title="8.3.3 在使用弹性布局时需要了解的两个基本方向"></a>8.3.3 在使用弹性布局时需要了解的两个基本方向</h4><ol>
+<li>主轴：在弹性布局中，需要通过样式属性去规定水平/垂直方向为主轴</li>
+<li>交叉轴：与主轴垂直的另一个方向称之为交叉轴</li>
+</ol>
+<h4 id="8-3-4-弹性布局的使用步骤"><a href="#8-3-4-弹性布局的使用步骤" class="headerlink" title="8.3.4 弹性布局的使用步骤"></a>8.3.4 弹性布局的使用步骤</h4><ol>
+<li>给父元素添加display:flex/inline-flex来规定该容器为弹性布局显示，而不遵循常规的文档流模式</li>
+<li>添加弹性布局的相关属性样式</li>
+<li>注：当元素采用了弹性布局后，子元素的浮动会失效</li>
+<li>入门</li>
+</ol>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 100px;
+            /*规定容器*/
+            display: flex;
+            background-color: aqua;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50%;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>配合display:flex使用的12个属性（6个容器属性，6个项目属性）</p>
+<h4 id="6个容器属性"><a href="#6个容器属性" class="headerlink" title="6个容器属性"></a>6个容器属性</h4><ol>
+<li><ol>
+<li>flex-direction  改属性决定主轴的方向（表示在容器中项目的排列方向）</li>
+</ol>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>row   默认值</td>
+<td>主轴为水平方向，从父容器的左部开始渲染显示</td>
+</tr>
+<tr>
+<td>row-reverse</td>
+<td>主轴为水平方向，从父容器的右部开始渲染显示</td>
+</tr>
+<tr>
+<td>column</td>
+<td>主轴为垂直方向，从父容器的左上部开始渲染显示</td>
+</tr>
+<tr>
+<td>column-reverse</td>
+<td>主轴为垂直方向，从父容器的左下部开始渲染显示</td>
+</tr>
+</tbody></table>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 100px;
+            /*规定容器*/
+            display: flex;
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            background-color: aqua;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50%;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>b. flex-wrap   项目的排列方式（默认情况下，所有项目都排列在一条轴线上）</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nowrap</td>
+<td>不换行，当容器的宽度不够时，容器中的每个项目将会被挤压</td>
+</tr>
+<tr>
+<td>wrap</td>
+<td>换行，按项目的实际宽度执行排列，当容器宽度不够时自动换行，并且第一行在容器的最上方</td>
+</tr>
+<tr>
+<td>wrap-reverse</td>
+<td>换行，第一行在容器的最下方</td>
+</tr>
+</tbody></table>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 100px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50%;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>c.  flex-flow:flex-direction  flex-wrap</p>
+<p>默认值为  flex-flow:row  wrap</p>
+<p>d.  justify-content   定义了项目在主轴方向的对齐方式</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-start</td>
+<td>项目位于主轴的起点</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>项目位于主轴的终点</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中对齐</td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>两端对齐，项目间的间隔相等，开头项目和结束项目与容器两边没有间隔</td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>两端对齐，项目间的间隔相等，开头项目和结束项目与容器两边有一定的间隔</td>
+</tr>
+</tbody></table>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 100px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50%;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>e.  align-items  交叉轴对齐方式</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-start</td>
+<td>交叉轴起点对齐</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>交叉轴终点对齐</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中对齐</td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>以项目的第一行文字为基线对齐，文字的行高，字体大小会直接影响后边的项目对齐</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>如果项目没有设置高度，则添加该属性后项目会占满整个容器</td>
+</tr>
+</tbody></table>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 100px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            /*交叉轴对齐方式*/
+            align-items: center;
+            /*align-items: flex-end;*/
+            /*align-items: stretch;*/
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50%;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 100px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            /*交叉轴对齐方式*/
+            align-items: stretch;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            /*没有高度*/
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 100px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            /*交叉轴对齐方式*/
+            align-items: baseline;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50%;
+            background-color: red;
+        &#125;
+        .big&#123;
+            font-size: 30px;
+            line-height: 50px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;big&quot;&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>f.  align-content 定义多根轴线的对齐方式，如果定义一根轴线则该属性不生效（不推荐出现多根轴线）</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-start</td>
+<td>与交叉轴的起点对齐</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>与交叉轴的终点对齐</td>
+</tr>
+<tr>
+<td>center</td>
+<td>与交叉轴的中点对齐</td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>与交叉轴的两端对齐，轴线之间的间隔平均分布，开头和结束项目与容器没间隔</td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>与交叉轴的两端对齐，轴线之间的间隔都相等</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>轴线占满整个交叉轴</td>
+</tr>
+</tbody></table>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 300px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            /*多根轴线与交叉轴的对齐方式*/
+            /*align-content: center;*/
+            align-content: space-between;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50px;
+            background-color: red;
+        &#125;
+        .big&#123;
+            font-size: 30px;
+            line-height: 50px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;big&quot;&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;5&lt;/div&gt;
+        &lt;div&gt;6&lt;/div&gt;
+        &lt;div&gt;7&lt;/div&gt;
+        &lt;div&gt;8&lt;/div&gt;
+        &lt;div&gt;9&lt;/div&gt;
+        &lt;div&gt;10&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="6个项目属性"><a href="#6个项目属性" class="headerlink" title="6个项目属性"></a>6个项目属性</h4><ol>
+<li><ol>
+<li>order 定义项目排列的顺序，数值越小，排列越靠前，默认值为0，当添加了大于0的值后，该项目则不遵循文档流的排列方式</li>
+</ol>
+</li>
+</ol>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 300px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            /*多根轴线与交叉轴的对齐方式*/
+            /*align-content: center;*/
+            align-content: space-between;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50px;
+            background-color: red;
+        &#125;
+        .big&#123;
+            font-size: 30px;
+            line-height: 50px;
+        &#125;
+        .orderStyle&#123;
+            order: 5;
+        &#125;
+        .orderStyle1&#123;
+            order: 7;
+        &#125;
+        .orderStyle2&#123;
+            order: 6;
+        &#125;
+        .orderStyle3&#123;
+            order: 4;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;big orderStyle&quot;&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div class=&quot;orderStyle1&quot;&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div class=&quot;orderStyle2&quot;&gt;5&lt;/div&gt;
+        &lt;div&gt;6&lt;/div&gt;
+        &lt;div&gt;7&lt;/div&gt;
+        &lt;div class=&quot;orderStyle3&quot;&gt;8&lt;/div&gt;
+        &lt;div&gt;9&lt;/div&gt;
+        &lt;div&gt;10&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>b. flex-grow 用来定义项目的放大比例，默认为0，在为0的情况下，即使容器还有空间，项目也不会放大，当值大于零时容器还有空间余量的话则添加了该属性的项目会放大</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 300px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            /*flex-wrap: nowrap;*/
+            flex-wrap: wrap;
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            /*多根轴线与交叉轴的对齐方式*/
+            /*align-content: center;*/
+            align-content: space-between;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50px;
+            background-color: red;
+        &#125;
+        .big&#123;
+            font-size: 30px;
+            line-height: 50px;
+        &#125;
+        .orderStyle&#123;
+            order: 5;
+            flex-grow: 2;
+        &#125;
+        .orderStyle1&#123;
+            order: 7;
+            flex-grow: 2;
+        &#125;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;big orderStyle&quot;&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div class=&quot;orderStyle1&quot;&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>c. flex-shrink  定义项目是否可压缩，默认值为1，若空间不够，该项目将被缩小，如果其中某一个项目的值被设置为0，则它的空间不会被压缩</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 300px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            flex-wrap: nowrap;
+            /*flex-wrap: wrap;*/
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            /*多根轴线与交叉轴的对齐方式*/
+            /*align-content: center;*/
+            align-content: space-between;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50px;
+            background-color: red;
+        &#125;
+        .fs&#123;
+            flex-shrink: 0;
+        &#125;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;fs&quot;&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;5&lt;/div&gt;
+        &lt;div&gt;6&lt;/div&gt;
+        &lt;div&gt;7&lt;/div&gt;
+        &lt;div&gt;8&lt;/div&gt;
+        &lt;div&gt;9&lt;/div&gt;
+        &lt;div&gt;10&lt;/div&gt;
+        &lt;div&gt;11&lt;/div&gt;
+        &lt;div&gt;12&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>d. flex-basis  定义了项目占据主轴的空间（设置项目的宽度，当项目添加了该属性后，width会失效）</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 300px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            flex-wrap: nowrap;
+            /*flex-wrap: wrap;*/
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            /*多根轴线与交叉轴的对齐方式*/
+            /*align-content: center;*/
+            align-content: space-between;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50px;
+            background-color: red;
+        &#125;
+        .fs&#123;
+            flex-shrink: 0;
+            flex-basis: 50%;
+        &#125;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;fs&quot;&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;5&lt;/div&gt;
+        &lt;div&gt;6&lt;/div&gt;
+        &lt;div&gt;7&lt;/div&gt;
+        &lt;div&gt;8&lt;/div&gt;
+        &lt;div&gt;9&lt;/div&gt;
+        &lt;div&gt;10&lt;/div&gt;
+        &lt;div&gt;11&lt;/div&gt;
+        &lt;div&gt;12&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>e. align-self  设置某个项目在交叉轴上的对齐方式，其参数和align-items一致，当某个项目添加了该属性后，则会覆盖父容器上的align-itmes属性，其默认值为auto（表示继承父容器的align-itmes值）</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .box&#123;
+            width: 100%;
+            height: 300px;
+            /*规定容器*/
+            display: flex;
+            /*主轴*/
+            flex-direction: row;
+            /*flex-direction: row-reverse;*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            /*排列方式*/
+            flex-wrap: nowrap;
+            /*flex-wrap: wrap;*/
+            /*flex-wrap: wrap-reverse;*/
+            background-color: aqua;
+            /*主轴对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: space-around;*/
+            justify-content: space-between;
+            align-items: center;
+        &#125;
+        .box div&#123;
+            width: 20%;
+            height: 50px;
+            background-color: red;
+        &#125;
+        .fs&#123;
+            flex-shrink: 0;
+            flex-basis: 50%;
+            align-self: flex-end;
+        &#125;
+        .as&#123;
+            align-self: flex-start;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;fs&quot;&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+        &lt;div&gt;5&lt;/div&gt;
+        &lt;div&gt;6&lt;/div&gt;
+        &lt;div class=&quot;as&quot;&gt;7&lt;/div&gt;
+        &lt;div&gt;8&lt;/div&gt;
+        &lt;div&gt;9&lt;/div&gt;
+        &lt;div&gt;10&lt;/div&gt;
+        &lt;div&gt;11&lt;/div&gt;
+        &lt;div&gt;12&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>f. flex属性，该属性相当于flex-grow，flex-shrink，flex-basis的简写，默认值0,1 auto</p>
+
+        </article>
+
+        
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>xiguayaaaaa<br>
+    
+    <strong>本文链接：</strong><a href="https://xiguayaaaaa.github.io/2022/07/08/%E5%85%AB-%E5%B8%83%E5%B1%80/" title="https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;08&#x2F;%E5%85%AB-%E5%B8%83%E5%B1%80&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;08&#x2F;%E5%85%AB-%E5%B8%83%E5%B1%80&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%89%8D%E7%AB%AF%E7%BB%84/">前端组</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86/" rel="tag">知识</a>
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src="https://unpkg.com/leancloud-storage/dist/av-min.js"></script>
+<script src='https://unpkg.com/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'r5zxC0st0DDjPA9auXzMV7HY-gzGzoHsz',
+        appKey: '3bqCsovpyfTPHUzTHovd3V3V'
+    })
+</script>
+</section>
+    </div>
+</div>
+
+
+        <div class="nexmoe-post-right">
+          
+            <div class="nexmoe-fixed">
+              <div class="nexmoe-tool">
+                <a href="#" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  <div id="nexmoe-pendant">
+    <div class="nexmoe-drawer mdui-drawer nexmoe-pd" id="drawer">
+        
+            <div class="nexmoe-pd-item">
+                <div class="clock">
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="needle" id="hours"></div>
+        <div class="needle" id="minutes"></div>
+        <div class="needle" id="seconds"></div>
+        <div class="clock_logo">
+
+        </div>
+
+    </div>
+<style>
+    .clock {
+        background-color: #ffffff;
+        width: 70vw;
+        height: 70vw;
+        max-width: 70vh;
+        max-height: 70vh;
+        border: solid 2.8vw #242424;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0 1.4vw 2.8vw rgba(0, 0, 0, 0.8);
+        zoom:0.2
+    }
+
+    .memory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .memory:nth-child(1) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-520%);
+    }
+
+    .memory:nth-child(2) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(6deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(3) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(12deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(4) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(18deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(5) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(24deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(6) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-520%);
+    }
+
+    .memory:nth-child(7) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(36deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(8) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(42deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(9) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(48deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(10) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(54deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(11) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-520%);
+    }
+
+    .memory:nth-child(12) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(66deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(13) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(72deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(14) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(78deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(15) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(84deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(16) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-520%);
+    }
+
+    .memory:nth-child(17) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(96deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(18) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(102deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(19) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(108deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(20) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(114deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(21) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-520%);
+    }
+
+    .memory:nth-child(22) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(126deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(23) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(132deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(24) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(138deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(25) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(144deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(26) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-520%);
+    }
+
+    .memory:nth-child(27) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(156deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(28) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(162deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(29) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(168deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(30) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(174deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(31) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-520%);
+    }
+
+    .memory:nth-child(32) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(186deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(33) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(192deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(34) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(198deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(35) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(204deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(36) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-520%);
+    }
+
+    .memory:nth-child(37) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(216deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(38) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(222deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(39) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(228deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(40) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(234deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(41) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-520%);
+    }
+
+    .memory:nth-child(42) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(246deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(43) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(252deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(44) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(258deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(45) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(264deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(46) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-520%);
+    }
+
+    .memory:nth-child(47) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(276deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(48) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(282deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(49) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(288deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(50) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(294deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(51) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-520%);
+    }
+
+    .memory:nth-child(52) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(306deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(53) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(312deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(54) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(318deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(55) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(324deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(56) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-520%);
+    }
+
+    .memory:nth-child(57) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(336deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(58) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(342deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(59) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(348deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(60) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(354deg) translateY(-1461%);
+    }
+
+    .needle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .needle#hours {
+        background-color: #1f1f1f;
+        width: 4%;
+        height: 30%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#hours.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#hours:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#minutes {
+        background-color: #1f1f1f;
+        width: 2%;
+        height: 45%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#minutes.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#minutes:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#seconds {
+        background-color: #cb2f2f;
+        width: 1%;
+        height: 50%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#seconds.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#seconds:after {
+        content: '';
+        background-color: #cb2f2f;
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 2.5vh;
+        max-height: 2.5vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .clock_logo{
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 100vh) {
+        .clock {
+            border: solid 2.8vh #242424;
+            box-shadow: 0 1.4vh 2.8vh rgba(0, 0, 0, 0.8);
+        }
+    }
+
+</style>
+
+
+
+
+
+            </div>
+        
+            <div class="nexmoe-pd-item">
+                <div class="qweather" >
+    <div id="he-plugin-standard"></div>
+    <div class="qweather-logo">
+
+    </div>
+
+</div>
+<style>
+    .qweather{
+        position: relative;
+    }
+    .qweather-logo{
+        position: absolute;
+        right: 0;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+<script>
+  WIDGET = {
+    "CONFIG": {
+      "layout": "2",
+      "width": "260",
+      "height": "230",
+      "background": "5",
+      "dataColor": "e67249",
+      "borderRadius": "15",
+      "key": "f74d1e1690e6432d801e97fa2f05a162"
+    }
+  }
+</script>
+<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+
+            </div>
+        
+</div>
+<style>
+    .nexmoe-pd {
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+  </div>
+  <script src="https://unpkg.com/lazysizes@5.1.0/lazysizes.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/10.0.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/app.js?v=1657284942228"></script>
+
+<script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
+<script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+<script src="/lib/codeBlock/codeBlockFuction.js"></script>
+
+<script src="/lib/codeBlock/codeLang.js"></script>
+
+<script src="/lib/codeBlock/codeCopy.js"></script>
+
+<script src="/lib/codeBlock/codeShrink.js"></script>
+
+<link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
+<script src="/js/webapp.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":180,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
