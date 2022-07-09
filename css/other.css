@@ -21,6 +21,7 @@
   width: 60px;
   padding: 5px 0;
   background-color: $theme_color;
+/*小头 紫色*/
   transform: rotate(0deg);
   border-radius: 50%;
   color: #fff;
@@ -34,6 +35,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
+/*两个小耳朵的颜色*/
   background-color: $theme_color;
 }
 #nexmoe-header .nexmoe-count .nexmoe-count-item .item-right {
@@ -44,8 +46,10 @@
   color: #fff;
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item.active {
+/*列表选中状态的颜色*/
   background-color: $theme_color;
   box-shadow: 0 2px 12px $theme_color_shadow;
+  box-shadow: 0 2px 12px #896cce;
 }
 #nexmoe-header .nexmoe-search input {
   width: 100%;
