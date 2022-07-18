@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>Hello World - xigua</title>
+  <title>Java基础 - xigua</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,17 +16,17 @@
     <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta name="description" content="Welcome to Hexo!">
+  <meta name="description" content="Java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://xiguayaaaaa.github.io/2022/07/02/hello-world/index.html">
+<meta property="og:title" content="Java基础">
+<meta property="og:url" content="https://xiguayaaaaa.github.io/2022/07/15/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="xigua">
-<meta property="og:description" content="Welcome to Hexo!">
+<meta property="og:description" content="Java基础">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-02T08:36:28.000Z">
-<meta property="article:modified_time" content="2022-07-07T10:37:01.257Z">
+<meta property="article:published_time" content="2022-07-15T10:52:12.000Z">
+<meta property="article:modified_time" content="2022-07-18T00:14:04.500Z">
 <meta property="article:author" content="xiguayaaaaa">
-<meta property="article:tag" content="瞎写的">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
   <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
@@ -36,7 +36,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1658103332973">
+  <link rel="stylesheet" href="/css/style.css?v=1658103332812">
 <meta name="generator" content="Hexo 5.4.2"></head>
 
 <body class="mdui-drawer-body-left">
@@ -235,17 +235,16 @@
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
     
-        <div class="nexmoe-post-cover"
-             style="padding-bottom: 24.305555555555554%;">
-            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Hello World" class="lazyload">
-            <h1>Hello World</h1>
+        <div class="nexmoe-post-cover" style="padding-bottom: 26.666666666666668%;">
+            <img data-src="https://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_retina/public/java-logo.png?itok=Ch4V9Is3" data-sizes="auto" alt="Java基础" class="lazyload">
+            <h1>Java基础</h1>
         </div>
     
 
         <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2022年07月02日</a>
-    <a><i class="nexmoefont icon-areachart"></i>78 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年07月15日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
 </div>
 
         <div class="nexmoe-post-right">
@@ -253,21 +252,343 @@
         </div>
 
         <article>
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>!</p>
+            <p>Java基础</p>
 <span id="more"></span>
-<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+
+<h1 id="一-Java概述"><a href="#一-Java概述" class="headerlink" title="一.Java概述"></a>一.Java概述</h1><h3 id="Java跨平台实现"><a href="#Java跨平台实现" class="headerlink" title="Java跨平台实现"></a>Java跨平台实现</h3><ol>
+<li>Java源代码在编写过后，会编译成平台无关的字节码文件，该文件不依赖于任何平台</li>
+<li>Java针对不同的平台开发了不同的JVM，当程序运行时由JVM将字节码文件转换成对应平台的指令</li>
+</ol>
+<h3 id="Java的特点"><a href="#Java的特点" class="headerlink" title="Java的特点"></a>Java的特点</h3><ol>
+<li>简单性</li>
+<li>跨平台</li>
+<li>分布式</li>
+<li>面向对象</li>
+<li>安全性</li>
+<li>多线程</li>
+</ol>
+<h3 id="Java源代码中注意事项"><a href="#Java源代码中注意事项" class="headerlink" title="Java源代码中注意事项"></a>Java源代码中注意事项</h3><ol>
+<li>Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写。</li>
+<li>main()写法固定，public static void main(String[] args);</li>
+<li>System中首字母大写</li>
+</ol>
+<h3 id="技术名词"><a href="#技术名词" class="headerlink" title="技术名词"></a>技术名词</h3><p>JDK(Java Develop Kit):Java 开发工具</p>
+<p>JRE(Java Runtime Environment)：Java 运行环境</p>
+<p>JVM(Java Virtual machine )：Java虚拟机</p>
+<h1 id="二-Java标识符和运算符"><a href="#二-Java标识符和运算符" class="headerlink" title="二.Java标识符和运算符"></a>二.Java标识符和运算符</h1><p>Java是一门强类型语言，所谓的强类型语言，可以理解为包含以下2层含义：</p>
+<ol>
+<li>所有的变量都必须先声明，后使用</li>
+<li>变量的类型一旦确定，那么变量的值必须和数据类型相匹配</li>
+</ol>
+<h2 id="Java标识符"><a href="#Java标识符" class="headerlink" title="Java标识符"></a>Java标识符</h2><p>标识符：类名、方法名、变量名统称为标识符</p>
+<ol>
+<li>可以包含数字、字母、下划线，$，不能以数字开头</li>
+<li>不能包含除了_，$以外的特殊字符。</li>
+<li>不能使用Java关键字</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>abstract</th>
+<th>continue</th>
+<th>for</th>
+<th>new</th>
+<th>switch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>assert</td>
+<td>default</td>
+<td>if</td>
+<td>package</td>
+<td>synchronized</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>do</td>
+<td>goto</td>
+<td>private</td>
+<td>this</td>
+</tr>
+<tr>
+<td>break</td>
+<td>double</td>
+<td>implements</td>
+<td>protected</td>
+<td>throws</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>else</td>
+<td>import</td>
+<td>public</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>instanceof</td>
+<td>return</td>
+<td>transient</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>extends</td>
+<td>int</td>
+<td>short</td>
+<td>try</td>
+</tr>
+<tr>
+<td>char</td>
+<td>final</td>
+<td>interface</td>
+<td>static</td>
+<td>void</td>
+</tr>
+<tr>
+<td>class</td>
+<td>finally</td>
+<td>long</td>
+<td>strictfp</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const</td>
+<td>float</td>
+<td>native</td>
+<td>super</td>
+<td>while</td>
+</tr>
+</tbody></table>
+<p><strong>示例</strong></p>
+<pre><code class="java">/**
+ * 标识符的命名规范
+ * 1.
+ * 2.不能包含除了$,_以外的字符
+ * 3.不能包含关键字
+ * @author MR.W
+ */
+public class Identifier &#123;
+    //错误原因：不能以数字开头
+//    int 1ab;
+    int _abc;
+    int abc_;
+    int a_bc;
+    int abc1;
+    int $abd;
+    int ab$d;
+    int abd$;
+    //错误原因，包含除了$，_以外的特殊符号
+//    int abc-;
+//    错误原因，使用了Java关键字
+//    int instanceof;
+    public void abc() &#123;
+    &#125;
+&#125;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+<h2 id="Java命名方式"><a href="#Java命名方式" class="headerlink" title="Java命名方式"></a>Java命名方式</h2><ol>
+<li>帕斯卡命名法：所有单词首字母均大写。适用于类名，例如：StudentManager</li>
+<li>驼峰命名法：第一个单词的首字母小写，如果有多个但是，其余单词首字母均大写，适用于方法名，变量名。例如：studentAge，studentGender</li>
+</ol>
+<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><ol>
+<li>基本类型：byte short int long float double boolean char</li>
+<li>引用类型: 数组， 类，接口</li>
+</ol>
+<h2 id="变量的声明和初始化"><a href="#变量的声明和初始化" class="headerlink" title="变量的声明和初始化"></a>变量的声明和初始化</h2><pre><code>数据类型  变量名 [=值];
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+<h2 id="Java数据类型-1"><a href="#Java数据类型-1" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><table>
+<thead>
+<tr>
+<th>整型</th>
+<th>字节长度</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>1</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2</td>
+<td>-32768~32767</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4</td>
+<td>-2 147 483 648~2 147 483 647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>8</td>
+<td>-9 223 372 036 854 775 808~9 223 372 036 854 775 807</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>浮点型</th>
+<th>字节长度</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4</td>
+<td>±3.402 823 47E+38F（有效位数为6-7位）</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8</td>
+<td>±1.797 693 134 862 315 70E+308（有效位数为15位）</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>布尔型</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>true/false</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>字符型</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>0-65535</td>
+</tr>
+</tbody></table>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><ol>
+<li>低类型–&gt;高类型：自动转</li>
+<li>高类型–&gt;低类型：强制转换</li>
+</ol>
+<pre><code>int a = 10;
+byte b = (byte) a;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="运算符类型"><a href="#运算符类型" class="headerlink" title="运算符类型"></a>运算符类型</h3><ol>
+<li><p>算数运算符</p>
+</li>
+<li><p>赋值运算符</p>
+</li>
+<li><p>位运算符</p>
+</li>
+<li><p>比较运算符</p>
+</li>
+<li><p>逻辑运算符</p>
+</li>
+</ol>
+<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><table>
+<thead>
+<tr>
+<th>运算符说明</th>
+<th>Java运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>分隔符</td>
+<td>, [] () {} . ;</td>
+</tr>
+<tr>
+<td>单目运算符</td>
+<td>++ –  ~  ！</td>
+</tr>
+<tr>
+<td>强制类型转换运算符</td>
+<td>(type)</td>
+</tr>
+<tr>
+<td>乘法/除法/求余</td>
+<td>*/ %</td>
+</tr>
+<tr>
+<td>加法/减法</td>
+<td>+-</td>
+</tr>
+<tr>
+<td>移位运算符</td>
+<td>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td>关系运算</td>
+<td>&lt; &lt;= &gt;= &gt; instanceof</td>
+</tr>
+<tr>
+<td>等价运算符</td>
+<td>== !=</td>
+</tr>
+<tr>
+<td>按位与</td>
+<td>&amp;</td>
+</tr>
+<tr>
+<td>按位异或</td>
+<td>^</td>
+</tr>
+<tr>
+<td>按位或</td>
+<td>|</td>
+</tr>
+<tr>
+<td>条件与</td>
+<td>&amp;&amp;</td>
+</tr>
+<tr>
+<td>条件或</td>
+<td>||</td>
+</tr>
+<tr>
+<td>三目运算符</td>
+<td>?:</td>
+</tr>
+<tr>
+<td>赋值</td>
+<td>= += -= *= /= &amp;= |= ^= %= &lt;&lt;= &gt;&gt;= &gt;&gt;&gt;=</td>
+</tr>
+</tbody></table>
+<h1 id="三-流程控制"><a href="#三-流程控制" class="headerlink" title="三.流程控制"></a>三.流程控制</h1><ol>
+<li>顺序结构：通常而言，我们的代码，根据书写的顺序在上而下执行。</li>
+<li>分支结构：对多种可能出现的情况进行判断：单分支，双分支，多分支</li>
+<li>循环结构：同一段代码片段多次执行</li>
+</ol>
+<h2 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h2><h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><h3 id="if-单分支"><a href="#if-单分支" class="headerlink" title="if 单分支"></a>if 单分支</h3><pre><code class="java">if(逻辑表达式)&#123;
+    //代码
+&#125;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="if-双分支"><a href="#if-双分支" class="headerlink" title="if 双分支"></a>if 双分支</h3><pre><code>if(逻辑表达式)&#123;
+    //逻辑表达式结果为true，执行此处的代码
+&#125;else&#123;
+    //逻辑表达式不成立，则执行此处的代码
+&#125;
+</code></pre>
+<h3 id="if多分支"><a href="#if多分支" class="headerlink" title="if多分支"></a>if多分支</h3><pre><code>if(逻辑表达式)&#123;
+
+&#125;else if(逻辑表达式)&#123;
+
+&#125;else if(逻辑表达式)&#123;
+
+&#125;else&#123;
+
+&#125;
+</code></pre>
+<ol>
+<li>请将101转换成二进制，并将二进制的前3位替换为1，并求出原码</li>
+<li>请输入一个年份，并判断是否是闰年</li>
+<li>请输入一个数，判断是否是质数</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965#">https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965?#</a> 《第2章 Java数据类型和运算符》密码：ekp0</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653#">https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653?#</a> 《第4章 数组》密码：mg6w</p>
 
         </article>
 
@@ -276,7 +597,9 @@
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>xiguayaaaaa<br>
     
-    <strong>本文链接：</strong><a href="https://xiguayaaaaa.github.io/2022/07/02/hello-world/" title="https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;02&#x2F;hello-world&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;02&#x2F;hello-world&#x2F;</a><br>
+      <strong>文章来源：</strong><a href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369%20%E5%AF%86%E7%A0%81%EF%BC%9Asyl5" title="https:&#x2F;&#x2F;www.yuque.com&#x2F;docs&#x2F;share&#x2F;8290264f-2175-46ce-8b20-711eac7ac369 密码：syl5" target="_blank" rel="noopener">https:&#x2F;&#x2F;www.yuque.com&#x2F;docs&#x2F;share&#x2F;8290264f-2175-46ce-8b20-711eac7ac369 密码：syl5</a><br>
+    
+    <strong>本文链接：</strong><a href="https://xiguayaaaaa.github.io/2022/07/15/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/" title="https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;15&#x2F;Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;15&#x2F;Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0&#x2F;</a><br>
 
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
@@ -288,10 +611,10 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
     
-        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E9%97%AE%E9%A2%98%E7%BB%84/">问题组</a>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%90%8E%E7%AB%AF%E7%BB%84/">后端组</a>
     
     
-        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%9E%8E%E5%86%99%E7%9A%84/" rel="tag">瞎写的</a>
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Java/" rel="tag">Java</a>
     
 </div>
 
@@ -1025,7 +1348,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1658103332974"></script>
+<script src="/js/app.js?v=1658103332814"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
