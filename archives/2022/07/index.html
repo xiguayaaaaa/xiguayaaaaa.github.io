@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1658235128285">
+  <link rel="stylesheet" href="/css/style.css?v=1658235332838">
 <meta name="generator" content="Hexo 5.4.2"></head>
 
 <body class="mdui-drawer-body-left">
@@ -248,205 +248,7 @@
         
         <article>
             
-                <h1 id="Java常见得的排序算法"><a href="#Java常见得的排序算法" class="headerlink" title="Java常见得的排序算法"></a>Java常见得的排序算法</h1><h2 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h2><ol>
-<li><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</p>
-</li>
-<li><p>对每一对相邻元素放同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</p>
-</li>
-<li><p>针对所有的元素重复以上的步骤，除了最后一个。</p>
-</li>
-<li><p>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-</li>
-</ol>
-<p><img src="https://files.catbox.moe/a0pb5h.gif"></p>
-<pre><code class="java">public static void main(String[] args) &#123;
-        int[] a = &#123;6,9,7,3,1&#125;;
-        for (int i = 0; i &lt; a.length-1; i++) &#123;
-            for (int j = 0; j &lt; a.length-i-1; j++) &#123;
-                if(a[j]&gt;a[j+1]) &#123;
-                    int temp =a[j];
-                    a[j] = a[j+1];
-                    a[j+1] =temp;
-                &#125;
-            &#125;
-        &#125;
-        System.out.println(Arrays.toString(a));
-&#125;
-</code></pre>
-<h2 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h2><ol>
-<li>在长度为N的无序数组中，第一次遍历-1个数，找到最小的数与第一个元素交换</li>
-<li>第二次遍历-2个数，找到最小的数值与第二个元素交换</li>
-<li>重复以上步骤</li>
-<li>第n-1次遍历，找到最小的数值与第n-1的元素交换，排序完成</li>
-</ol>
-<p><img src="https://files.catbox.moe/6jqfd2.gif"></p>
-<pre><code class="java">public static void main(String[] args) &#123;
-        int[] a = &#123;8,2,3,17,23,85,1,9&#125;;
-        for (int i = 0; i &lt; a.length; i++) &#123;
-            //定义此轮循环最小数放置的位置
-            int minIndex = i;
-            //从第2个数依次和后面的数进行对比
-            for (int j = i+1; j &lt; a.length; j++) &#123;
-                //如果minIndex的数比j大则记录j
-                if(a[minIndex]&gt;a[j]) &#123;
-                    minIndex=j;
-                &#125;
-            &#125;
-            if(minIndex!=i)&#123;
-                int temp = a[minIndex];
-                a[minIndex] = a[i];
-                a[i] = temp;
-                System.out.println(&quot;每次结果&gt;&gt;&gt;&quot;+Arrays.toString(a));
-            &#125;
-            System.out.println(&quot;每轮结果===&quot;+Arrays.toString(a));
-        &#125;
-    &#125;
-</code></pre>
-<h2 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h2><ol>
-<li>在要排序的无序数组中，假定-1个数已经排好序，现在将第个数插入到前面的有序数列中，使得这个个数也是拍好序的，反复循环，直到全部排好顺序。插入排序也可以理解为从第二个数开始，前面的相邻的数依次两两对比，如果后面的数比前面的数小，则交换位置。(如果实在理解不了，可以类比冒泡排序，把插入排序理解为一种特殊的冒泡排序）</li>
-</ol>
-<p><img src="https://files.catbox.moe/hzemg8.gif"></p>
-<pre><code class="java">public static void main(String[] args) &#123;
-        int[] a = &#123;87,86,82,10,30&#125;;
-        for (int i = 0; i &lt; a.length-1; i++) &#123;
-            for (int j = i+1; j &gt;0; j--) &#123;
-                if(a[j]&lt;a[j-1]) &#123;
-                    int temp = a[j];
-                    a[j] = a[j-1];
-                    a[j-1] = temp;
-                &#125;else&#123;
-                    break;   
-                &#125;
-                System.out.println(&quot;每次结果===&quot;+Arrays.toString(a));
-            &#125;
-            System.out.println(&quot;第&quot;+(i+1)+&quot;轮结果&gt;&gt;&gt;&quot;+Arrays.toString(a));
-        &#125;
-    &#125;
-</code></pre>
-<h2 id="4-快速排序"><a href="#4-快速排序" class="headerlink" title="4.快速排序"></a>4.快速排序</h2><p>快速排序有两种实现方式：双边循环法和挖坑法，思路如下：</p>
-<h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><ol>
-<li>定义左右指针，并选取一个数作为基准（通常选择数组第一个）</li>
-<li>移动右指针，如果右指针的数小于基准数，则停止移动，反之则继续移动</li>
-<li>移动左指针，如果左指针的数大于基准数，则停止移动，反之则继续移动</li>
-<li>当左右指针都停止移动时交换左右指针处的数</li>
-<li>当左右两个指针停在相同位置时，交换指针处的数和基准数的位置</li>
-<li>将数组以左右指针位置处一分为二重复上述步骤。</li>
-</ol>
-<pre><code class="Java">public class QuickSort &#123;
-    /**
-     * 双边循环
-     * @return
-     */
-    public static int pivotIndex(int[]ary,int startIndex,int endIndex) &#123;
-        //保存左右两个指针，从第一个元素和最后一个元素开始
-        int left = startIndex;
-        int right = endIndex;
-        //获取基准，一般选择数组第一个数
-        int pivot = ary[startIndex];
-        //大循环，当左右两个指针不相等时，左指针右移，右指针左移
-        while (left!=right) &#123;
-            //右边指针向左移动，当对应元素大于基准数时继续移动，小于基准数时停止移动
-            while(right&gt;left&amp;&amp;ary[right]&gt;=pivot) &#123;
-                right--;
-            &#125;
-            //左边指针向右移动，当小于基准数时继续移动，大于基准数时停止移动
-            while (right&gt;left&amp;&amp;ary[left]&lt;=pivot) &#123;
-                left++;
-            &#125;
-            //此时如果左边指针小于右边指针时；左右指针交换元素
-            if(left&lt;right) &#123;
-                int temp = ary[right];
-                ary[right] = ary[left];
-                ary[left] = temp;
-            &#125;
-        &#125;
-        int index = left;
-        //如果两个指针相等时,交换基准元素和当前位置的数
-        ary[startIndex] = ary[index];
-        ary[index] = pivot;
-        return index;
-    &#125;
-    public static void qucikSort(int[] ary,int startIndex,int endIndex) &#123;
-        if(startIndex&gt;endIndex) &#123;
-            return;
-        &#125;
-        int index = pivotIndex(ary,startIndex,endIndex);
-        qucikSort(ary, startIndex, index-1);
-        qucikSort(ary, index+1, endIndex);
-    &#125;
-    public static void main(String[] args) &#123;
-        int[] a= &#123;5,6,1,2,4,9,3&#125;;
-        qucikSort(a, 0, a.length-1);
-        System.out.println(Arrays.toString(a));
-    &#125;
-&#125;
-</code></pre>
-<h5 id="挖坑法"><a href="#挖坑法" class="headerlink" title="挖坑法"></a>挖坑法</h5><ol>
-<li>选取起始位置作为标记位（也就是坑），选取一个数作为基准，通常是数组第一个</li>
-<li>从数组第二数开始依次和基准数对比，如果比基准数小，则扩大小于基准数的区间，也就是mark++,并将该数与标mark处的数交换</li>
-<li>循环结束后，将mark处的数和基准数进行交换</li>
-<li>以mark为界，将数组一分为二重复上述步骤</li>
-</ol>
-<p><img src="https://files.catbox.moe/dcwsxe.gif"></p>
-<pre><code class="Java">/**
- * 单边循环
- * @author MR.W
- */
-public class QucikSort2 &#123;
-    public static int pivotIndex(int[] ary,int startIndex,int endIndex) &#123;
-        int mark = startIndex;
-        int pivot = ary[startIndex];
-        for (int i = startIndex+1; i &lt;= endIndex; i++) &#123;
-            //如果指针指向的元素小于基准元素，干两件事情
-            //1.mark+1,扩大小于基准数的区间
-            //2.将指针所指向的数和mark位置处的数进行交换
-            if(ary[i]&lt;pivot) &#123;
-                mark++;
-                int temp = ary[i];
-                ary[i] = ary[mark];
-                ary[mark] = temp;
-            &#125;
-        &#125;
-        //当循环结束时将mark位置的数和基准数进行交换
-        ary[startIndex]= ary[mark]; 
-        ary[mark] = pivot;
-        return mark;
-    &#125;
-    public static void quickSort(int[] ary,int startIndex,int endIndex) &#123;
-        if(startIndex&gt;endIndex) &#123;
-            return;
-        &#125;
-        int index = pivotIndex(ary, startIndex, endIndex);
-        quickSort(ary, startIndex, index-1);
-        quickSort(ary, index+1, endIndex);
-    &#125;
-    public static void main(String[] args) &#123;
-        int [] a = &#123;7,9,1,4,8&#125;;
-        quickSort(a, 0, a.length-1);
-        System.out.println(Arrays.toString(a));
-    &#125;
-&#125;
-</code></pre>
-<pre><code class="java">public static void main(String[] args) &#123;
-        
-        int [] a = &#123;5,1,6,2,3&#125;;
-        
-        for (int i = 0; i &lt; a.length; i++) &#123;
-            for (int j = 0; j &lt; a.length-1; j++) &#123;
-                int temp;
-                if(a[i]&lt;a[j]) &#123;
-                    temp = a[j];
-                    a[j] = a[i];
-                    a[i] = temp;
-                &#125;
-                System.out.println(&quot;每次&quot;+Arrays.toString(a));
-            &#125;
-            System.out.println(&quot;每轮&quot;+Arrays.toString(a));
-        &#125;
-        System.out.println(&quot;最后&quot;+Arrays.toString(a));
-    &#125;
-</code></pre>
-
+                <p> Java常见得的排序算法<br>
             
         </article>
     </div>
@@ -1377,7 +1179,7 @@ public class QucikSort2 &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1658235128286"></script>
+<script src="/js/app.js?v=1658235332840"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1396,12 +1198,6 @@ public class QucikSort2 &#123;
 <!-- hexo injector body_end start -->
 <script src="/js/clock.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script src="/js/search.js"></script>
-
-<script src="/js/webapp.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1413,6 +1209,12 @@ public class QucikSort2 &#123;
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
+<script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":180,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
