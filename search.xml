@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>本地文件上传GitHub</title>
+      <link href="/2022/07/20/%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0GitHub/"/>
+      <url>/2022/07/20/%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0GitHub/</url>
+      
+        <content type="html"><![CDATA[<p>本地文件上传GitHub</p><span id="more"></span><h3 id="1-首先在GitHub上创建仓库"><a href="#1-首先在GitHub上创建仓库" class="headerlink" title="1.首先在GitHub上创建仓库"></a>1.首先在GitHub上创建仓库</h3><h3 id="2-找到本地文件位置"><a href="#2-找到本地文件位置" class="headerlink" title="2.找到本地文件位置"></a>2.找到本地文件位置</h3><h3 id="3-通过git上传文件"><a href="#3-通过git上传文件" class="headerlink" title="3.通过git上传文件"></a>3.通过git上传文件</h3><p>首先进入你的master文件夹下，右键打开“Git Bash Here” ，弹出命令窗口 ，输入如下语句进行上传</p><ol><li>git init ：在此文件夹生成一个.git隐藏文件；</li><li>git add . : 将文件添加到缓存区( 注意这个”.”，是有空格的，”.”代表这个test这个文件夹下的目录全部都提交，也可以通过git add 文件名 提交指定的文件)；</li><li>git status：查看现在的状态，也可以不看，随你啦，可以看到所在目录下的所有文件夹里面的内容都提交上去了；</li><li>git commit -m “这里是注释”：提交添加到缓存区的文件</li><li>git remote add origin SSH链接： 添加新的git方式的origin, github上创建好的仓库和本地仓库进行关联</li><li>git push origin master : 把本地库的所有内容推送到远程仓库（github）上，即上传本地文件成功！！！</li><li>刷新GitHub即可看到上传的相关文件</li></ol><h3 id="4-怎么更新仓库内容"><a href="#4-怎么更新仓库内容" class="headerlink" title="4.怎么更新仓库内容"></a>4.怎么更新仓库内容</h3><ol><li>找到文件位置，右键打开“Git Bash Here” ，弹出命令窗口</li><li>输入git add .  :添加新增文件</li><li>再git commit -m “注释”</li><li>最后git push origin master上传</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题组 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 瞎写的 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java常见的排序算法</title>
       <link href="/2022/07/19/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
       <url>/2022/07/19/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
