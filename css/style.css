@@ -1218,12 +1218,12 @@ photos img {
   flex: none;
   width: 60px;
   padding: 5px 0;
-  background-color: #896cce;
+  background-color: #724d3e;
 /*小头 紫色*/
   transform: rotate(0deg);
   border-radius: 50%;
   color: #fff;
-  box-shadow: 0 2px 12px #896cce;
+  box-shadow: 0 2px 12px #724d3e;
   position: relative;
 }
 #nexmoe-header .nexmoe-count .nexmoe-count-item .item-radius {
@@ -1234,7 +1234,7 @@ photos img {
   height: 15px;
   border-radius: 50%;
 /*两个小耳朵的颜色*/
-  background-color: #896cce;
+  background-color: #724d3e;
 }
 #nexmoe-header .nexmoe-count .nexmoe-count-item .item-right {
   left: auto;
@@ -1245,8 +1245,8 @@ photos img {
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item.active {
 /*列表选中状态的颜色*/
-  background-color: #896cce;
-  box-shadow: 0 2px 12px #896cce;
+  background-color: #724d3e;
+  box-shadow: 0 2px 12px #724d3e;
   box-shadow: 0 2px 12px #896cce;
 }
 #nexmoe-header .nexmoe-search input {
@@ -1261,7 +1261,7 @@ photos img {
   background-color: #fff;
   border-radius: 15px;
   overflow: auto;
-  box-shadow: 0 2px 12px #896cce;
+  box-shadow: 0 2px 12px #724d3e;
   animation: anim 0.5s;
   max-height: 200px;
 }
@@ -1279,7 +1279,7 @@ photos img {
   color: #333;
 }
 #nexmoe-header #local-search-result .search-result-list .search-result-list-item a:hover {
-  color: #896cce;
+  color: #724d3e;
 }
 @-moz-keyframes anim {
   0% {
@@ -1318,14 +1318,14 @@ photos img {
   overflow: inherit;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget .category-list-count {
-  color: #896cce;
+  color: #724d3e;
   background-color: #f8e6d8;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget .archive-list-count {
-  color: #896cce;
+  color: #724d3e;
 }
 #nexmoe-header .nexmoe-copyright a {
-  color: #896cce;
+  color: #724d3e;
 }
 #nexmoe-content .nexmoe-posts .nexmoe-post {
   position: relative;
@@ -1340,7 +1340,7 @@ photos img {
   border-radius: 15px 0 8px 0;
   background-color: #f8e6d8;
   height: 30px;
-  color: #896cce;
+  color: #724d3e;
   display: flex;
   align-items: center;
 }
@@ -1355,8 +1355,8 @@ photos img {
   width: 300px;
 }
 #nexmoe-pendant .nexmoe-pd .clock {
-  border: solid 2.8vh #896cce;
-  box-shadow: 0 1.4vh 2.8vh #896cce;
+  border: solid 2.8vh #724d3e;
+  box-shadow: 0 1.4vh 2.8vh #724d3e;
 }
 #nexmoe-pendant .nexmoe-pd .clock .memory {
   background-color: #a50e00 !important;
@@ -1365,8 +1365,8 @@ photos img {
   background-image: url("/images/background/cangshu.png");
 }
 #nexmoe-pendant .nexmoe-pd .qweather #he-plugin-standard {
-  border: 2px solid #896cce;
-  box-shadow: 0 1px 0 0 #896cce, 0 1px 2px 0 #896cce;
+  border: 2px solid #724d3e;
+  box-shadow: 0 1px 0 0 #724d3e, 0 1px 2px 0 #724d3e;
 }
 #nexmoe-pendant .nexmoe-pd .qweather #he-plugin-standard .wv-lt-refresh {
   display: none;
@@ -1378,19 +1378,19 @@ photos img {
   background-image: url("/images/background/cangshu.png");
 }
 article a {
-  color: #896cce;
+  color: #724d3e;
 }
 article h2:after {
-  background: #896cce;
-  box-shadow: 0 2px 12px #896cce;
+  background: #724d3e;
+  box-shadow: 0 2px 12px #724d3e;
 }
 article h4:before,
 article h5:before,
 article h6:before {
-  color: #896cce;
+  color: #724d3e;
 }
 article ol li::before {
-  color: #896cce;
+  color: #724d3e;
   background-color: #f8e6d8;
 }
 article pre .text,
@@ -1398,11 +1398,11 @@ article pre .txt {
   color: #abb2bf;
 }
 .nexmoe-archives li::before {
-  background: #896cce;
+  background: #724d3e;
 }
 .nexmoe-rainbow a:nth-child(7n+1) {
   background: #f8e6d8;
-  color: #896cce;
+  color: #724d3e;
 }
 #nexmoe-content .nexmoe-post .nexmoe-py .aplayer {
   background-image: url("/images/background/chichi.jpg");
@@ -1411,11 +1411,11 @@ article pre .txt {
   background-repeat: no-repeat;
 }
 #nexmoe-content .nexmoe-post .nexmoe-py p em {
-  color: #896cce;
+  color: #724d3e;
   font-size: 17px;
 }
 #nexmoe-content .nexmoe-post .nexmoe-comment .v a::before {
-  background: #896cce;
+  background: #724d3e;
 }
 #nexmoe-content .nexmoe-post .nexmoe-comment .v .veditor {
   background-image: url("/images/background/papa.jpg");
@@ -1425,19 +1425,19 @@ article pre .txt {
   background-color: #fff;
 }
 #nexmoe-content .nexmoe-post .nexmoe-comment .v .vlist .vcard .vhead .vnick {
-  color: #896cce;
+  color: #724d3e;
 }
 #nexmoe-content .nexmoe-post .nexmoe-comment .v .vlist .vcard .vhead .vnick::before {
-  background: #896cce;
+  background: #724d3e;
 }
 #nexmoe-content .nexmoe-post .nexmoe-comment .v button {
   background: #f8e6d8;
-  color: #896cce;
+  color: #724d3e;
 }
 #nexmoe-content .nexmoe-post .nexmoe-comment .v button:hover {
-  background: #896cce;
+  background: #724d3e;
   color: #fff;
-  border-color: #896cce;
+  border-color: #724d3e;
 }
 #nexmoe-content .nexmoe-post .nexmoe-comment .v .vcontrol .col-20 a {
   display: none;
@@ -1446,10 +1446,10 @@ article pre .txt {
   display: none;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-copyright a {
-  color: #896cce;
+  color: #724d3e;
 }
 #nexmoe-content .nexmoe-primary .nexmoe-page-nav .current {
-  background: #896cce;
+  background: #724d3e;
   box-shadow: 0 2px 12px #f8e6d8;
 }
 #daodream-container .daodream-launcher {
@@ -1462,44 +1462,44 @@ article pre .txt {
 #daodream-container .daodream-sheet-header {
   background-image: linear-gradient(0deg, #f8e6d8, #f8e6d8) !important;
   box-shadow: 0 1px 0 0 #f8e6d8, 0 1px 2px 0 #f8e6d8 !important;
-  color: #896cce;
+  color: #724d3e;
 }
 #daodream-container .daodream-sheet-header .daodream-sheet-header-generic-title {
-  color: #896cce;
+  color: #724d3e;
   font-weight: bold;
 }
 #daodream-container .daodream-composer-textarea textarea {
-  color: #896cce !important;
+  color: #724d3e !important;
 }
 #daodream-container .daodream-composer-textarea textarea:focus {
   outline: none;
-  border: 1px solid #896cce !important;
+  border: 1px solid #724d3e !important;
 }
 #daodream-container .daodream-composer-send-button {
-  background-image: linear-gradient(180deg, #896cce, #896cce) !important;
-  background: #896cce !important;
+  background-image: linear-gradient(180deg, #724d3e, #724d3e) !important;
+  background: #724d3e !important;
 }
 #daodream-container .daodream-conversations-item-user-avatar {
-  background-color: #896cce !important;
+  background-color: #724d3e !important;
 }
 #daodream-container .daodream-conversations-new-conversation-button {
-  background-image: linear-gradient(180deg, #896cce, #896cce) !important;
-  background: #896cce !important;
+  background-image: linear-gradient(180deg, #724d3e, #724d3e) !important;
+  background: #724d3e !important;
 }
 #daodream-container .daodream-comment-card .notification-input {
-  border: 1px solid #896cce !important;
+  border: 1px solid #724d3e !important;
 }
 #daodream-container .daodream-comment-card .notification-submit {
-  background-color: #896cce !important;
+  background-color: #724d3e !important;
 }
 #daodream-container .daodream-comment-card .daodream-comment-avatar {
   content: url("/images/head/head.jpg") !important;
 }
 #daodream-container .daodream-comment-by-user .daodream-comment-body-container {
-  background-color: #896cce !important;
+  background-color: #724d3e !important;
 }
 #daodream-container .daodream-comment-by-user .daodream-comment-caret:before {
-  background-color: #896cce !important;
+  background-color: #724d3e !important;
 }
 #daodream-container .daodream-sheet-spinner {
   border-radius: 50% !important;
@@ -1509,7 +1509,7 @@ article pre .txt {
 #daodream-container .daodream-launcher-button {
   width: 80px !important;
   height: 80px !important;
-  background-color: #896cce !important;
+  background-color: #724d3e !important;
   background-image: url("/images/head/call.jpg") !important;
   background-size: 100% 100% !important;
   border-radius: 50% !important;
