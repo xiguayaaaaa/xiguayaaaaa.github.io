@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+  <title>(六)样式表与选择器 - xigua</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+
+  <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
+  <meta name="description" content="(六)样式表与选择器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(六)样式表与选择器">
+<meta property="og:url" content="https://xiguayaaaaa.github.io/2022/07/08/%E5%85%AD-%E6%A0%B7%E5%BC%8F%E8%A1%A8%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8/index.html">
+<meta property="og:site_name" content="xigua">
+<meta property="og:description" content="(六)样式表与选择器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/22038106/1630480612231-e15e1d65-ac38-4c0a-84d2-9f8c78dc8991.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_Qnl0ZeWtpumZog==,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10">
+<meta property="article:published_time" content="2022-07-08T11:42:50.000Z">
+<meta property="article:modified_time" content="2022-07-19T02:31:31.508Z">
+<meta property="article:author" content="xiguayaaaaa">
+<meta property="article:tag" content="知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/22038106/1630480612231-e15e1d65-ac38-4c0a-84d2-9f8c78dc8991.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_Qnl0ZeWtpumZog==,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+  <link rel="stylesheet" href="/lib/fancybox/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1658709435335">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/images/background/1.jpg)"></div>
+    <div class="nexmoe-small" style="background-image: url(/images/background/lihui2.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="xiguayaaaaa" class="mdui-btn mdui-btn-icon"><img src="/images/head/call.jpg" alt="xiguayaaaaa"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="xiguayaaaaa">
+            <img src="/images/head/call.jpg" alt="xiguayaaaaa" alt="xiguayaaaaa">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div class="nexmoe-count-item"><span>文章</span>24 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>4<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>6<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-meishi"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-hanbao1"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://airui520.github.io" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-cola"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  
+<!-- 站内搜索 -->
+
+<div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search" >
+        <form id="search-form">
+            <label><input type="text" id="local-search-input" name="q" results="0" placeholder="站内搜索" class="input form-control" autocomplete="off" autocorrect="off"/></label>
+            <!-- 清空/重置搜索框 -->
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+        </form>
+    </div>
+    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+    <!-- <p class='no-result'></p> 无匹配时显示，注意在 CSS 中设置默认隐藏 -->
+</div>
+
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=127752475&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(64, 196, 255);background-color: rgba(64, 196, 255, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="mailto:1281238306@qq.com" target="_blank" mdui-tooltip="{content: 'mail'}" style="color: rgb(249,8,8);background-color: rgba(249,8,8,.1);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a><a class="mdui-ripple" href="https://i.csdn.net/#/user-center/profile?spm=1011.2124.3001.5111" target="_blank" mdui-tooltip="{content: 'CSDN'}" style="color: rgb(199,29,35);background-color: rgba(199,29,35,.1);">
+            <i class="nexmoefont icon-csdn"></i>
+        </a><a class="mdui-ripple" href="https://www.cnblogs.com/" target="_blank" mdui-tooltip="{content: '博客园'}" style="color: rgb(66, 214, 29);background-color: rgba(66, 214, 29, .1);">
+            <i class="nexmoefont icon-bokeyuan"></i>
+        </a><a class="mdui-ripple" href="https://github.com/xiguayaaaaa/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://gitee.com" target="_blank" mdui-tooltip="{content: 'gitee'}" style="color: rgb(255, 255, 255);background-color: rgb(199,29,35);">
+            <i class="nexmoefont icon-mayun"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/兴趣组/">兴趣组</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/前端组/">前端组</a>
+          <span class="category-list-count">12</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/后端组/">后端组</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/知识组/">知识组</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/问题组/">问题组</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/%E7%9E%8E%E5%86%99%E7%9A%84/" style="font-size: 15px;">瞎写的</a> <a href="/tags/%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">知识</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">24</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/22/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81/">第六章 面向对象的特征</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/20/%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0GitHub/">本地文件上传GitHub</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/19/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">Java常见的排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/19/Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/">Java语言概述</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 xiguayaaaaa
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/tangyuxian/hexo-theme-tangyuxian" target="_blank">Tangyuxian</a><br/>
+        <a href="http://beian.miit.gov.cn" target="_blank">所谓伊人，在水一方</a><br/>
+        
+        <div style="font-size: 12px">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br />
+            本站访客数<a id="busuanzi_value_site_uv"></a>人次
+        </div>
+        
+        
+    </div>
+
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    
+        <div class="nexmoe-post-cover" style="padding-bottom: 26.666666666666668%;">
+            <img data-src="https://tse3-mm.cn.bing.net/th/id/OIP-C.Od-UrquQOrcwEkpDwwkCiQHaEK?pid=ImgDet&rs=1" data-sizes="auto" alt="(六)样式表与选择器" class="lazyload">
+            <h1>(六)样式表与选择器</h1>
+        </div>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年07月08日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3.3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 16 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
+            
+        </div>
+
+        <article>
+            <p>(六)样式表与选择器</p>
+<span id="more"></span>
+
+
+
+<h2 id="6-1-样式表"><a href="#6-1-样式表" class="headerlink" title="6.1 样式表"></a>6.1 样式表</h2><p>css 是 web 标准中的表现标准，专门用来对网页标签进行布局和设置样式的一门语言，目前使用css3，css 又名层叠样式表.</p>
+<p>样式表表示CSS代码的位置，目前CSS样式表分以下三类：</p>
+<h4 id="6-1-1-内联样式表"><a href="#6-1-1-内联样式表" class="headerlink" title="6.1.1 内联样式表"></a>6.1.1 内联样式表</h4><ul>
+<li>顾名思义内联样式写在标签中（在开始标签中添加style=””属性，在双引号中添加样式属性，属性和属性之间用分号隔开）</li>
+<li>格式</li>
+</ul>
+<p>&lt;开始标签 style=”样式属性:属性值;样式属性:属性值;………”&gt;标签内容&lt;/结束标签&gt;</p>
+<p>示例</p>
+<pre><code class="html">&lt;body&gt;
+    &lt;div style=&quot;color: red&quot;&gt;内联样式&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="6-1-2-内部样式表"><a href="#6-1-2-内部样式表" class="headerlink" title="6.1.2 内部样式表"></a>6.1.2 内部样式表</h4><ul>
+<li>写在html内部的样式（在html的头文件中嵌套&lt;style&gt;标签，在style标签中通过特有格式添加基本样式）</li>
+<li>格式</li>
+</ul>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .demo&#123;
+            color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;demo&quot;&gt;内联样式&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="6-1-3-外部样式表"><a href="#6-1-3-外部样式表" class="headerlink" title="6.1.3 外部样式表"></a>6.1.3 外部样式表</h4><ul>
+<li>外部样式表就是在html文件外创建一个后缀为.css的文件，然后html标签中使用link标签将外部.css文件引入到html文件中去使用</li>
+<li>格式</li>
+</ul>
+<p>&lt;link rel=”stylesheet” href=”外部文件路径” type=”text/css” /&gt;</p>
+<ul>
+<li>创建外部样式表文件</li>
+</ul>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.nlark.com/yuque/0/2021/png/22038106/1630480612231-e15e1d65-ac38-4c0a-84d2-9f8c78dc8991.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_Qnl0ZeWtpumZog==,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="img" class="lazyload"></p>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styleCss.css&quot; type=&quot;text/css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;demo&quot;&gt;内联样式&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+.demo&#123;
+    color: red;
+&#125;
+</code></pre>
+<p>注：当三种样式表出现冲突时，三种样式表的优先级为  <strong>内联样式表&gt;内部样式表&gt;外部样式表</strong></p>
+<h2 id="6-2-选择器"><a href="#6-2-选择器" class="headerlink" title="6.2 选择器"></a>6.2 选择器</h2><p>选择器是CSS 中一个重要的内容。使用它可以大幅度提高开发人员书写或修改样式表时的工作效率。</p>
+<h4 id="6-2-1-属性选择器"><a href="#6-2-1-属性选择器" class="headerlink" title="6.2.1 属性选择器"></a>6.2.1 属性选择器</h4><p>在HTML中，通过各种各样的属性，我们可以给元素增加很多附加信息。例如，通过width属性，我们可以指定div元素的宽度，通过id属性，我们可以将不同的div元素进行区分，并且通过JavaScript来控制这个div元素的内容和状态。</p>
+<h5 id="6-2-1-1-类选择器-class选择器"><a href="#6-2-1-1-类选择器-class选择器" class="headerlink" title="6.2.1.1 类选择器(class选择器)"></a>6.2.1.1 类选择器(class选择器)</h5><ul>
+<li>在开始标签中添加class=””属性，并命名，在样式表中使用“.选择器名称{……}”可为该元素添加想要添加的样式属性</li>
+<li>当然样式表中的样式与标签中的class=”选择名称”，可以理解为是标签引用了选择器中的样式，一个标签中可以引用多个类选择器样式，名称和名称之间用空格隔开</li>
+<li>格式</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>样式表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;开始标签 class=”ClassName”&gt;元素内容&lt;/结束标签&gt;</td>
+<td>.ClassName{  样式属性:属性值;  样式属性:属性值;  ……}</td>
+</tr>
+<tr>
+<td>&lt;开始标签 class=”ClassName ClassNameTest”&gt;元素内容&lt;/结束标签&gt;</td>
+<td>.ClassName{  样式属性:属性值;  样式属性:属性值;  ……}.ClassNameTest{  样式属性:属性值;  样式属性:属性值;  ……}</td>
+</tr>
+</tbody></table>
+<p>类选择器样式是可以重复使用的，也就是说一个样式可以由多个元素共同使用，这样可以提供代码的复用性，但是需要注意在做网页结构布局的时候对于结构不要过多的复用代码，保不准后期需要更改结构模块，复用的代码可以是一些不更改结构的样式，如文字，颜色，等</p>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .demo&#123;
+            width: 100%;
+            height: 100px;
+        &#125;
+        .color1&#123;
+            background-color: red;
+        &#125;
+        .color2&#123;
+            background-color: #3bee17;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;demo color1&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;demo color2&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="6-2-1-2-id选择器"><a href="#6-2-1-2-id选择器" class="headerlink" title="6.2.1.2 id选择器"></a>6.2.1.2 id选择器</h5><ul>
+<li>在开始标签中添加id=””属性，并命名，在样式表中使用“#选择器名称{……}”可为该元素添加想要添加的样式属性</li>
+<li>需要注意的是id选择器是唯一的，不可复用的，它是一个元素的唯一标识</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>样式表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;开始标签 id=”ClassName”&gt;元素内容&lt;/结束标签&gt;</td>
+<td>#ClassName{  样式属性:属性值;  样式属性:属性值;  ……}</td>
+</tr>
+</tbody></table>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        #myElement&#123;
+            color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;myElement&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="6-2-1-3-通配选择器"><a href="#6-2-1-3-通配选择器" class="headerlink" title="6.2.1.3 通配选择器"></a>6.2.1.3 通配选择器</h5><ul>
+<li>[att*=val]选择器</li>
+</ul>
+<p>[att*=val]属性选择器的含义是:如果元素用att表示的属性之属性值中包含用val指定的字符的话，则该元素使用这个样式。</p>
+<ul>
+<li>[att^=val]选择器</li>
+</ul>
+<p>[att^=val]属性选择器的含义是:如果元素用att表示的属性之属性值的开头字符为用val指定的字符的话，则该元素使用这个样式。</p>
+<ul>
+<li>[att$=val]选择器</li>
+</ul>
+<p>[att$=val]属性选择器的含义是:如果元素用att表示的属性之属性值的结尾字符为用val指定的字符的话，则该元素使用这个样式。</p>
+<p>注：使用该属性时必须在指定匹配字符前加上“\”转义符，不能是纯数字</p>
+<p>示例1</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+      /*只要包含e字符，全部添加一下样式*/
+        [class*=e]&#123;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;Element&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element2&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo1&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element3&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo2&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element4&quot;&gt;这是元素&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>示例2</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        /*只要d开头，就添加以下样式*/
+        [class^=d]&#123;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;Element&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element2&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo1&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element3&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo2&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element4&quot;&gt;这是元素&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>示例3</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        /*只要-2结尾，就添加以下样式*/
+        [class$=\-2]&#123;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;Element&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element-2&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo-1&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element-3&quot;&gt;这是元素&lt;/div&gt;
+    &lt;div class=&quot;demo-2&quot;&gt;这是文字&lt;/div&gt;
+    &lt;div class=&quot;Element-4&quot;&gt;这是元素&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="6-2-2-标签选择器"><a href="#6-2-2-标签选择器" class="headerlink" title="6.2.2 标签选择器"></a>6.2.2 标签选择器</h4><ul>
+<li>标签选择顾名思义就是直接使用标签名在样式表中去给标签添加样式</li>
+<li>注：标签选择器会给所有同名且没有其它选择器的标签添加相同的样式，不建议直接使用，可与结构选择器结合使用</li>
+</ul>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .demo&#123;
+            color: #2279ee;
+        &#125;
+        div&#123;
+            color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;这是一行字&lt;/div&gt;
+    &lt;div&gt;这是一行字&lt;/div&gt;
+    &lt;div class=&quot;demo&quot;&gt;这是一行字&lt;/div&gt;
+    &lt;div&gt;这是一行字&lt;/div&gt;
+    &lt;div&gt;这是一行字&lt;/div&gt;
+    &lt;div&gt;这是一行字&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="6-2-3-结构选择器"><a href="#6-2-3-结构选择器" class="headerlink" title="6.2.3 结构选择器"></a>6.2.3 结构选择器</h4><h5 id="6-2-3-1-后代选择器"><a href="#6-2-3-1-后代选择器" class="headerlink" title="6.2.3.1 后代选择器"></a>6.2.3.1 后代选择器</h5><ul>
+<li>后代选择器又称包含选择器，后代选择器可以选择作为某元素后代（嵌套关系）的元素</li>
+<li>我们可以定义后代选择器来创建一些规则，使这些规则在某些文档结构中起作用，而在另外一些结构中不起作用。</li>
+<li>在后代选择器中，规则左边的选择器一端包括两个或多个用空格分隔的选择器。选择器之间的空格是一种结合符（combinator）。每个空格结合符可以解释为“… 在 … 找到”、“… 作为 … 的一部分”、“… 作为 … 的后代”，但是要求必须从右向左读选择器。</li>
+</ul>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .dlOne dd p&#123;
+            color: white;
+            background-color: red;
+        &#125;
+        .dlOne dd a&#123;
+            color: #ff6700;
+        &#125;
+        .dlTwo dd p&#123;
+            color: white;
+            background-color: #ff50ef;
+        &#125;
+        .dlTwo dd a&#123;
+            color: #339fff;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;dl class=&quot;dlOne&quot;&gt;
+        &lt;dt&gt;
+            &lt;img src=&quot;../images/mapImages/1.png&quot; alt=&quot;&quot;&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;p&gt;这是一行字&lt;/p&gt;
+            &lt;a href=&quot;#&quot;&gt;这是另一行字&lt;/a&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;dl class=&quot;dlTwo&quot;&gt;
+        &lt;dt&gt;
+            &lt;img src=&quot;../images/mapImages/1.png&quot; alt=&quot;&quot;&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;p&gt;这还是一行字&lt;/p&gt;
+            &lt;a href=&quot;#&quot;&gt;这又是另一行字&lt;/a&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="6-2-3-2-群组选择器"><a href="#6-2-3-2-群组选择器" class="headerlink" title="6.2.3.2 群组选择器"></a>6.2.3.2 群组选择器</h5><ul>
+<li>要为不同的HTML元素定义相同的样式时，可以采用群组声明。</li>
+<li>上述规则在选择器中指定了多个元素，元素之间用逗号来分隔。逗号告诉浏览器，规则中包含两个不同的选择器。这样的选择器叫群组选择器。</li>
+<li>群组选择器可以减少样式的重复定义。可以把任意数量、任意类型的选择器放在群组中进行声明</li>
+</ul>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .demo,a&#123;
+            color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;demo&quot;&gt;Byte科技&lt;/div&gt;
+    &lt;a href=&quot;#&quot;&gt;棒滴很！！！&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="6-2-3-3-序号子选择器"><a href="#6-2-3-3-序号子选择器" class="headerlink" title="6.2.3.3 序号子选择器"></a>6.2.3.3 序号子选择器</h5><ul>
+<li> 序号选择器可以指定父元素中顺数或倒数某个子元素的样式</li>
+<li>nth-child() 顺数</li>
+<li>nth-last-child() 倒数</li>
+</ul>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        nav a:nth-child(1)&#123;
+            color: red;
+        &#125;
+        nav a:nth-child(2)&#123;
+            color: #339fff;
+        &#125;
+        nav a:nth-last-child(1)&#123;
+            background-color: #339fff;
+            color: white;
+        &#125;
+        nav a:nth-last-child(2)&#123;
+            background-color: #d442ff;
+            color: #fff800;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;a href=&quot;#&quot;&gt;导航&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;导航&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;导航&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;导航&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;导航&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;导航&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="6-2-4-通用选择器"><a href="#6-2-4-通用选择器" class="headerlink" title="6.2.4 通用选择器"></a>6.2.4 通用选择器</h4><ul>
+<li>通用选择器可以选择页面上的所有元素，并对它们应用样式，用 * 来表示。</li>
+</ul>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        *&#123;
+            color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;这是一行字&lt;/div&gt;
+    &lt;p&gt;这还是一行字&lt;/p&gt;
+    &lt;a href=&quot;#&quot;&gt;这又是一行字&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="6-2-5-伪类选择器"><a href="#6-2-5-伪类选择器" class="headerlink" title="6.2.5 伪类选择器"></a>6.2.5 伪类选择器</h4><ul>
+<li>伪类用于定义元素的特殊状态，由CSS提供</li>
+<li>E:hover</li>
+<li>E:active</li>
+<li>E:link</li>
+<li>E:visited</li>
+<li>E:foucs</li>
+</ul>
+<p>示例</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        a:link&#123;
+            color: #339fff;
+        &#125;
+        a:visited&#123;
+            color: #3bee17;
+        &#125;
+        a:hover&#123;
+            color: red;
+        &#125;
+        a:active&#123;
+            font-size: 25px;
+        &#125;
+        .inputEL:focus&#123;
+            background-color: #339fff;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href=&quot;#&quot; class=&quot;demo&quot;&gt;这是一行字&lt;/a&gt;
+
+    &lt;form action=&quot;&quot;&gt;
+        &lt;input class=&quot;inputEL&quot; type=&quot;text&quot; required&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+        </article>
+
+        
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>xiguayaaaaa<br>
+    
+    <strong>本文链接：</strong><a href="https://xiguayaaaaa.github.io/2022/07/08/%E5%85%AD-%E6%A0%B7%E5%BC%8F%E8%A1%A8%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8/" title="https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;08&#x2F;%E5%85%AD-%E6%A0%B7%E5%BC%8F%E8%A1%A8%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;08&#x2F;%E5%85%AD-%E6%A0%B7%E5%BC%8F%E8%A1%A8%E4%B8%8E%E9%80%89%E6%8B%A9%E5%99%A8&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%89%8D%E7%AB%AF%E7%BB%84/">前端组</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86/" rel="tag">知识</a>
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src="https://unpkg.com/leancloud-storage/dist/av-min.js"></script>
+<script src='https://unpkg.com/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'r5zxC0st0DDjPA9auXzMV7HY-gzGzoHsz',
+        appKey: '3bqCsovpyfTPHUzTHovd3V3V'
+    })
+</script>
+</section>
+    </div>
+</div>
+
+
+        <div class="nexmoe-post-right">
+          
+            <div class="nexmoe-fixed">
+              <div class="nexmoe-tool">
+                <a href="#" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  <div id="nexmoe-pendant">
+    <div class="nexmoe-drawer mdui-drawer nexmoe-pd" id="drawer">
+        
+            <div class="nexmoe-pd-item">
+                <div class="clock">
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="needle" id="hours"></div>
+        <div class="needle" id="minutes"></div>
+        <div class="needle" id="seconds"></div>
+        <div class="clock_logo">
+
+        </div>
+
+    </div>
+<style>
+    .clock {
+        background-color: #ffffff;
+        width: 70vw;
+        height: 70vw;
+        max-width: 70vh;
+        max-height: 70vh;
+        border: solid 2.8vw #242424;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0 1.4vw 2.8vw rgba(0, 0, 0, 0.8);
+        zoom:0.2
+    }
+
+    .memory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .memory:nth-child(1) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-520%);
+    }
+
+    .memory:nth-child(2) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(6deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(3) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(12deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(4) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(18deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(5) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(24deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(6) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-520%);
+    }
+
+    .memory:nth-child(7) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(36deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(8) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(42deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(9) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(48deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(10) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(54deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(11) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-520%);
+    }
+
+    .memory:nth-child(12) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(66deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(13) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(72deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(14) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(78deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(15) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(84deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(16) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-520%);
+    }
+
+    .memory:nth-child(17) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(96deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(18) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(102deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(19) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(108deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(20) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(114deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(21) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-520%);
+    }
+
+    .memory:nth-child(22) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(126deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(23) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(132deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(24) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(138deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(25) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(144deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(26) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-520%);
+    }
+
+    .memory:nth-child(27) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(156deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(28) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(162deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(29) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(168deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(30) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(174deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(31) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-520%);
+    }
+
+    .memory:nth-child(32) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(186deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(33) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(192deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(34) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(198deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(35) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(204deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(36) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-520%);
+    }
+
+    .memory:nth-child(37) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(216deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(38) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(222deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(39) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(228deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(40) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(234deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(41) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-520%);
+    }
+
+    .memory:nth-child(42) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(246deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(43) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(252deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(44) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(258deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(45) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(264deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(46) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-520%);
+    }
+
+    .memory:nth-child(47) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(276deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(48) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(282deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(49) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(288deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(50) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(294deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(51) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-520%);
+    }
+
+    .memory:nth-child(52) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(306deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(53) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(312deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(54) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(318deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(55) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(324deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(56) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-520%);
+    }
+
+    .memory:nth-child(57) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(336deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(58) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(342deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(59) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(348deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(60) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(354deg) translateY(-1461%);
+    }
+
+    .needle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .needle#hours {
+        background-color: #1f1f1f;
+        width: 4%;
+        height: 30%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#hours.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#hours:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#minutes {
+        background-color: #1f1f1f;
+        width: 2%;
+        height: 45%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#minutes.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#minutes:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#seconds {
+        background-color: #cb2f2f;
+        width: 1%;
+        height: 50%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#seconds.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#seconds:after {
+        content: '';
+        background-color: #cb2f2f;
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 2.5vh;
+        max-height: 2.5vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .clock_logo{
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 100vh) {
+        .clock {
+            border: solid 2.8vh #242424;
+            box-shadow: 0 1.4vh 2.8vh rgba(0, 0, 0, 0.8);
+        }
+    }
+
+</style>
+
+
+
+
+
+            </div>
+        
+            <div class="nexmoe-pd-item">
+                <div class="qweather" >
+    <div id="he-plugin-standard"></div>
+    <div class="qweather-logo">
+
+    </div>
+
+</div>
+<style>
+    .qweather{
+        position: relative;
+    }
+    .qweather-logo{
+        position: absolute;
+        right: 0;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+<script>
+  WIDGET = {
+    "CONFIG": {
+      "layout": "2",
+      "width": "260",
+      "height": "230",
+      "background": "5",
+      "dataColor": "e67249",
+      "borderRadius": "15",
+      "key": "f74d1e1690e6432d801e97fa2f05a162"
+    }
+  }
+</script>
+<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+
+            </div>
+        
+</div>
+<style>
+    .nexmoe-pd {
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+  </div>
+  <script src="https://unpkg.com/lazysizes@5.1.0/lazysizes.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/10.0.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/app.js?v=1658709435336"></script>
+
+<script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
+<script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+<script src="/lib/codeBlock/codeBlockFuction.js"></script>
+
+<script src="/lib/codeBlock/codeLang.js"></script>
+
+<script src="/lib/codeBlock/codeCopy.js"></script>
+
+<script src="/lib/codeBlock/codeShrink.js"></script>
+
+<link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
+<script src="/js/webapp.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":180,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f1c2dcc3.js","daovoice")</script>
+<script>
+  daovoice('init', {
+    app_id: "f1c2dcc3"
+  });
+  daovoice('update');
+</script>
+
