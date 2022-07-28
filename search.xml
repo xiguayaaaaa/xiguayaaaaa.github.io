@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>0728日志</title>
+      <link href="/2022/07/28/0728%E6%97%A5%E5%BF%97/"/>
+      <url>/2022/07/28/0728%E6%97%A5%E5%BF%97/</url>
+      
+        <content type="html"><![CDATA[<p>0728日志</p><span id="more"></span><h4 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h4><p>定义一个长度为10的数组，实现如下方法：</p><ol><li> add(int e):默认在数组末尾添加元素</li><li> add(int index):在索引出添加元素，要求元素必须是连续的</li><li> remove(int index):移除索引处的元素，要求移除后元素也是连续的</li><li> get(int index):获取数组中索引出的元素值</li><li> set(int index,int e):修改索引出的元素</li></ol><pre><code class="Java">public class Ary &#123;        int[] ary;    int num;//数组内的内容的个数                public Ary() &#123;//初始化        this.ary = new int[10];        this.num = 0;    &#125;        @Override    public String toString() &#123;        return Arrays.toString(ary);    &#125;    public void add(int e) &#123;        if(num&lt;10) &#123;//如果数组中的内容小于10            //添加元素值            ary[num]=e;            //添加一个，内容加一            num++;        &#125;else &#123;//数组内容等于10            System.out.println(&quot;数组已满&quot;);        &#125;    &#125;        public void add(int index,int e) &#123;        if(num&lt;10) &#123;            if(index&gt;=0 &amp;&amp; index&lt;=num-1) &#123;//索引只能大于等于0，小于等于数组中内容数减一                for(int i=num;i&gt;index;i--) &#123;//先将包括索引位置的值向后移一位                    ary[i]=ary[i-1];                &#125;                ary[index]=e;//将索引位置的值设置为传入的e            &#125;else &#123;                System.out.println(&quot;索引错误&quot;);            &#125;        &#125;else &#123;            System.out.println(&quot;数组已满&quot;);        &#125;    &#125;        public void remove(int index) &#123;        if(num&lt;10) &#123;            if(index&gt;=0 &amp;&amp; index&lt;=num-1) &#123;                for(int i=index;i&lt;num;i++) &#123;//索引位置开始，通过赋值将元素值向前移动一位                    ary[i]=ary[i+1];                &#125;                num--;//数组内容数减一            &#125;else &#123;                System.out.println(&quot;索引错误&quot;);            &#125;        &#125;else &#123;            System.out.println(&quot;数组已满&quot;);        &#125;    &#125;        public int get(int index) &#123;        int get=0;        if(index&gt;=0 &amp;&amp; index&lt;=num-1) &#123;            get=ary[index];//获取索引处的元素值            return get;        &#125;else &#123;            System.out.println(&quot;索引错误&quot;);            return -1;        &#125;    &#125;        public void set(int index,int e)&#123;        if(index&gt;=0 &amp;&amp; index&lt;=num-1) &#123;            ary[index]=e;//将索引处内容重新赋值        &#125;else &#123;            System.out.println(&quot;索引错误&quot;);        &#125;    &#125;                        public static void main(String[] args) &#123;        Ary ary=new Ary();        ary.add(1);        ary.add(6);        ary.add(8);        ary.add(2);        ary.add(4);//        System.out.println(ary.toString());//        ary.add(2, 7);//        System.out.println(ary.toString());//        ary.remove(3);//        ary.set(0, 9);        System.out.println(ary.toString());//        System.out.println(&quot;获取的元素值为&quot;+ary.get(2));    &#125;&#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日志 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 瞎写的 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>0727日志</title>
       <link href="/2022/07/27/0727%E6%97%A5%E5%BF%97/"/>
       <url>/2022/07/27/0727%E6%97%A5%E5%BF%97/</url>
