@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+  <title>(十二)JavaScript BOM与DOM - xigua</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+
+  <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
+  <meta name="description" content="(十二)JavaScript BOM与DOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(十二)JavaScript BOM与DOM">
+<meta property="og:url" content="https://xiguayaaaaa.github.io/2022/07/08/%E5%89%8D%E7%AB%AF/%E5%8D%81%E4%BA%8C-JavaScript-BOM%E4%B8%8EDOM/index.html">
+<meta property="og:site_name" content="xigua">
+<meta property="og:description" content="(十二)JavaScript BOM与DOM">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://files.catbox.moe/ccpeyl.png">
+<meta property="og:image" content="https://files.catbox.moe/9cmg9b.png">
+<meta property="og:image" content="https://files.catbox.moe/gezs9p.png">
+<meta property="og:image" content="https://files.catbox.moe/r0dclo.png">
+<meta property="og:image" content="https://files.catbox.moe/rk4u5p.png">
+<meta property="og:image" content="https://files.catbox.moe/e2r3lh.png">
+<meta property="og:image" content="https://files.catbox.moe/k600si.png">
+<meta property="og:image" content="https://files.catbox.moe/oxiqgh.png">
+<meta property="og:image" content="https://files.catbox.moe/29phbz.png">
+<meta property="article:published_time" content="2022-07-08T12:50:16.000Z">
+<meta property="article:modified_time" content="2022-07-25T09:23:11.397Z">
+<meta property="article:author" content="xiguayaaaaa">
+<meta property="article:tag" content="知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://files.catbox.moe/ccpeyl.png">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+  <link rel="stylesheet" href="/lib/fancybox/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1659485766031">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/images/background/1.jpg)"></div>
+    <div class="nexmoe-small" style="background-image: url(/images/background/lihui2.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="xiguayaaaaa" class="mdui-btn mdui-btn-icon"><img src="/images/head/call.jpg" alt="xiguayaaaaa"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="xiguayaaaaa">
+            <img src="/images/head/call.jpg" alt="xiguayaaaaa" alt="xiguayaaaaa">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div class="nexmoe-count-item"><span>文章</span>27 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>4<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>7<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-meishi"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-hanbao1"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://airui520.github.io" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-cola"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  
+<!-- 站内搜索 -->
+
+<div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search" >
+        <form id="search-form">
+            <label><input type="text" id="local-search-input" name="q" results="0" placeholder="站内搜索" class="input form-control" autocomplete="off" autocorrect="off"/></label>
+            <!-- 清空/重置搜索框 -->
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+        </form>
+    </div>
+    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+    <!-- <p class='no-result'></p> 无匹配时显示，注意在 CSS 中设置默认隐藏 -->
+</div>
+
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=127752475&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(64, 196, 255);background-color: rgba(64, 196, 255, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="mailto:1281238306@qq.com" target="_blank" mdui-tooltip="{content: 'mail'}" style="color: rgb(249,8,8);background-color: rgba(249,8,8,.1);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a><a class="mdui-ripple" href="https://i.csdn.net/#/user-center/profile?spm=1011.2124.3001.5111" target="_blank" mdui-tooltip="{content: 'CSDN'}" style="color: rgb(199,29,35);background-color: rgba(199,29,35,.1);">
+            <i class="nexmoefont icon-csdn"></i>
+        </a><a class="mdui-ripple" href="https://www.cnblogs.com/" target="_blank" mdui-tooltip="{content: '博客园'}" style="color: rgb(66, 214, 29);background-color: rgba(66, 214, 29, .1);">
+            <i class="nexmoefont icon-bokeyuan"></i>
+        </a><a class="mdui-ripple" href="https://github.com/xiguayaaaaa/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://gitee.com" target="_blank" mdui-tooltip="{content: 'gitee'}" style="color: rgb(255, 255, 255);background-color: rgb(199,29,35);">
+            <i class="nexmoefont icon-mayun"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/兴趣组/">兴趣组</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/前端组/">前端组</a>
+          <span class="category-list-count">12</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/后端组/">后端组</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/日志/">日志</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/知识组/">知识组</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/问题组/">问题组</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/%E7%9E%8E%E5%86%99%E7%9A%84/" style="font-size: 16.67px;">瞎写的</a> <a href="/tags/%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">知识</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/02/0802%E6%97%A5%E5%BF%97/">集合框架笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/28/0728%E6%97%A5%E5%BF%97/">0728日志</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/27/0727%E6%97%A5%E5%BF%97/">0727日志</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/22/Java/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81/">第六章 面向对象的特征</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/20/%E5%85%B6%E4%BB%96/%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0GitHub/">本地文件上传GitHub</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 xiguayaaaaa
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/tangyuxian/hexo-theme-tangyuxian" target="_blank">Tangyuxian</a><br/>
+        <a href="http://beian.miit.gov.cn" target="_blank">所谓伊人，在水一方</a><br/>
+        
+        <div style="font-size: 12px">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br />
+            本站访客数<a id="busuanzi_value_site_uv"></a>人次
+        </div>
+        
+        
+    </div>
+
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    
+        <div class="nexmoe-post-cover" style="padding-bottom: 43.333333333333336%;">
+            <img data-src="/images/post/five.jpg" data-sizes="auto" alt="(十二)JavaScript BOM与DOM" class="lazyload">
+            <h1>(十二)JavaScript BOM与DOM</h1>
+        </div>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年07月08日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 15 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
+            
+        </div>
+
+        <article>
+            <p>(十二)JavaScript BOM与DOM</p>
+<span id="more"></span>
+
+<h1 id="第十二章-JavaScript-BOM与DOM"><a href="#第十二章-JavaScript-BOM与DOM" class="headerlink" title="第十二章 JavaScript BOM与DOM"></a>第十二章 JavaScript BOM与DOM</h1><h2 id="BOM（borwser-object-Model）"><a href="#BOM（borwser-object-Model）" class="headerlink" title="BOM（borwser object Model）"></a>BOM（borwser object Model）</h2><h4 id="浏览器对象模型"><a href="#浏览器对象模型" class="headerlink" title="浏览器对象模型"></a>浏览器对象模型</h4><ul>
+<li><ul>
+<li>使用对象描述浏览器的各个部分</li>
+<li>BOM提供与浏览器窗口交互的对象</li>
+<li>BOM主要用于管理窗口与窗口之间的通讯，所以核心对象是窗口（window）</li>
+</ul>
+</li>
+<li><p>BOM里有什么</p>
+</li>
+<li><ul>
+<li><p>图示</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/ccpeyl.png" alt="img" class="lazyload"></p>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>与浏览器进行交互的一些对象</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>移动，调整浏览器大小的window对象</li>
+<li>用于导航的location对象history</li>
+<li>获取浏览器，用户屏幕信息的navigator与screen对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h5><ul>
+<li><ul>
+<li>open()方法用于打开一个新窗口或查找一个窗口</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>语法</li>
+<li>window.open(url,name,feature,replace)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>url</td>
+<td>声明要在新窗口中显示文档的url</td>
+</tr>
+<tr>
+<td>name</td>
+<td>该字符声明了新窗口的名称。这个名称可以用作标记 和的属性 target 的值。如果该参数指定了一个已经存在的窗口，那么 open() 方法就不再创建一个新窗口，而只是返回对指定窗口的引用。在这种情况下，features 将被忽略。</td>
+</tr>
+<tr>
+<td>feature</td>
+<td>声明了新窗口要显示的标准浏览器的特征</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>一个可选的布尔值。规定了装载到窗口的 URL 是在窗口的浏览历史中创建一个新条目，还是替换浏览历史中的当前条目。支持下面的值：true - URL 替换浏览历史中的当前条目。false - URL 在浏览历史中创建新的条目。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>案例 打开新窗口控制其外观样式</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/9cmg9b.png" alt="img" class="lazyload"></p>
+</li>
+<li><p>窗口特征表</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>channelmode=yes|no|1|0</th>
+<th>是否使用剧院模式显示窗口。默认为 no。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>directories=yes|no|1|0</td>
+<td>是否添加目录按钮。默认为 yes。</td>
+</tr>
+<tr>
+<td>fullscreen=yes|no|1|0</td>
+<td>是否使用全屏模式显示浏览器。默认是 no。处于全屏模式的窗口必须同时处于剧院模式。</td>
+</tr>
+<tr>
+<td>height=pixels</td>
+<td>窗口文档显示区的高度。以像素计。</td>
+</tr>
+<tr>
+<td>left=pixels</td>
+<td>窗口的 x 坐标。以像素计。</td>
+</tr>
+<tr>
+<td>location=yes|no|1|0</td>
+<td>是否显示地址字段。默认是 yes。</td>
+</tr>
+<tr>
+<td>menubar=yes|no|1|0</td>
+<td>是否显示菜单栏。默认是 yes。</td>
+</tr>
+<tr>
+<td>resizable=yes|no|1|0</td>
+<td>窗口是否可调节尺寸。默认是 yes。</td>
+</tr>
+<tr>
+<td>scrollbars=yes|no|1|0</td>
+<td>是否显示滚动条。默认是 yes。</td>
+</tr>
+<tr>
+<td>status=yes|no|1|0</td>
+<td>是否添加状态栏。默认是 yes。</td>
+</tr>
+<tr>
+<td>titlebar=yes|no|1|0</td>
+<td>是否显示标题栏。默认是 yes。</td>
+</tr>
+<tr>
+<td>toolbar=yes|no|1|0</td>
+<td>是否显示浏览器的工具栏。默认是 yes。</td>
+</tr>
+<tr>
+<td>top=pixels</td>
+<td>窗口的 y 坐标。</td>
+</tr>
+<tr>
+<td>width=pixels</td>
+<td>窗口的文档显示区的宽度。以像素计。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>setInterval()每隔指定的毫秒运行指定的代码/函数</p>
+</li>
+<li><p>案例</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/gezs9p.png" alt="img" class="lazyload"></p>
+</li>
+<li><p>setTimeout()经过指定毫秒数运行一次指定的代码/函数</p>
+</li>
+<li><p>案例</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/r0dclo.png" alt="img" class="lazyload"></p>
+</li>
+<li><p>location地址栏对象</p>
+</li>
+<li><ul>
+<li>href：设置或获取整个URL为字符串</li>
+</ul>
+</li>
+<li><p>案例</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/rk4u5p.png" alt="img" class="lazyload"></p>
+</li>
+<li><p>reload()：重新加载</p>
+</li>
+<li><p>replace():用新文档替换当前文档</p>
+</li>
+<li><p>案例</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/e2r3lh.png" alt="img" class="lazyload"></p>
+</li>
+</ul>
+<h5 id="屏幕对象（Screen）用来获取电脑屏幕的一些数据"><a href="#屏幕对象（Screen）用来获取电脑屏幕的一些数据" class="headerlink" title="屏幕对象（Screen）用来获取电脑屏幕的一些数据"></a>屏幕对象（Screen）用来获取电脑屏幕的一些数据</h5><ul>
+<li><ul>
+<li>availHeight：获取系统屏幕的工作区高度（浏览器的页面高度）</li>
+</ul>
+</li>
+<li><ul>
+<li><p>案例</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/k600si.png" alt="img" class="lazyload"></p>
+</li>
+</ul>
+</li>
+<li><p>availWidth：获取系统屏幕的工作区宽度（浏览器页面宽度）</p>
+</li>
+<li><p>height：获取屏幕的垂直分辨率</p>
+</li>
+<li><p>width：获取屏幕的水平分辨率</p>
+</li>
+<li><ul>
+<li><p>案例</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/oxiqgh.png" alt="img" class="lazyload"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="DOM编程"><a href="#DOM编程" class="headerlink" title="DOM编程"></a>DOM编程</h2><h4 id="文档对象模型（document）"><a href="#文档对象模型（document）" class="headerlink" title="文档对象模型（document）"></a>文档对象模型（document）</h4><ul>
+<li>当一个html页面加载到浏览器的时候，那么浏览器会为每个标签都创建一个对应的对象，描述该标签的所有信息</li>
+<li>我们此时所看到的网页信息实际上就是看到了这些标签的对象信息，如果我们需要操作页面的数据，我们就可以通过这些标签对象进行操作</li>
+<li>图例</li>
+<li><img data-fancybox="gallery" data-sizes="auto" data-src="https://files.catbox.moe/29phbz.png" alt="img" class="lazyload"></li>
+</ul>
+<h4 id="用来获取页面节点的方法"><a href="#用来获取页面节点的方法" class="headerlink" title="用来获取页面节点的方法"></a>用来获取页面节点的方法</h4><ul>
+<li><p>获取页面的所有节点：document.all；</p>
+</li>
+<li><p>nodeName:节点名字</p>
+<pre><code>var    elements =document.all;
+alert(elements);
+for(var index = 0;index&lt;elements.length;index++)&#123;
+   alert(&quot;节点名：&quot;+elements[index].nodeName);
+&#125;
+</code></pre>
+</li>
+<li><p>通过标签属性找节点</p>
+</li>
+<li><ul>
+<li><p>document.getElementById(“标签属性id”);</p>
+</li>
+<li><p>例</p>
+<pre><code>&lt;div id=&quot;test&quot;&gt;
+window.onload=function()&#123;
+    var    a = document.getElementById(&quot;test&quot;);
+    alert(a);
+&#125;;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>通过标签名获取节点</p>
+</li>
+<li><ul>
+<li><p>document.getElementsByTagName(标签名);</p>
+</li>
+<li><p>注：返回的是一个数组</p>
+</li>
+<li><p>例</p>
+<pre><code>&lt;div&gt;&lt;/div&gt;
+window.onload=function()&#123;
+     var    a = document.getElementsByName(&quot;div&quot;);
+     alert(a);
+&#125;;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>通过标签的Name属性获取节点</p>
+</li>
+<li><ul>
+<li><p>document.getElementByName(“标签的name属性值”);</p>
+</li>
+<li><p>注：返回的是一个数组</p>
+</li>
+<li><p>例</p>
+<pre><code>&lt;div name=&quot;ElName&quot;&gt;&lt;/div&gt;
+window.onload=function()&#123;
+    var    a = document.getElementsByName(&quot;ElName&quot;);
+    alert(a);
+&#125;;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>通过关系找节点</p>
+</li>
+<li><ul>
+<li>document可以通过一个节点，找到与它有关的节点</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><p>parentNode：获取当前元素的父节点</p>
+</li>
+<li><p>例</p>
+<pre><code>window.onload=function()&#123;
+    var    a = document.getElementById(&quot;test&quot;);
+    var    f = a.parentNode;
+    alert(f);
+    f.innerHTML=&quot;找到我了&quot;;
+&#125;;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>childNodes：获取当前元素的所有下一级子元素</p>
+<pre><code>window.onload=function()&#123;
+var    a = document.getElementById(&quot;test&quot;);
+var    all = a.childNodes;
+for(var    index = 0;index&lt;all.length;index++)&#123;
+    alert(all[index].nodeName);
+    if(all[index].nodeType==1)&#123;
+       all[index].style.background=&quot;red&quot;;
+    &#125;
+ &#125;
+&#125;;
+</code></pre>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>类型</strong></th>
+<th><strong>nodeType常数值</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Node.ELEMENT_NODE</td>
+<td>1</td>
+<td>元素节点</td>
+</tr>
+<tr>
+<td>Node.ATTRIBUTE_NODE</td>
+<td>2</td>
+<td>属性节点</td>
+</tr>
+<tr>
+<td>Node.TEXT_NODE</td>
+<td>3</td>
+<td>文本节点</td>
+</tr>
+<tr>
+<td>Node.CDATA_SECTION_NODE</td>
+<td>4</td>
+<td>字符数据节点（文本不会被解析器解析）</td>
+</tr>
+<tr>
+<td>Node.ENTITY_REFERENCE_NODE</td>
+<td>5</td>
+<td>实体引用节点</td>
+</tr>
+<tr>
+<td>Node.ENTITY_NODE</td>
+<td>6</td>
+<td>实体节点</td>
+</tr>
+<tr>
+<td>Node.PROCESSING_INSTRUCTION_NODE</td>
+<td>7</td>
+<td>处理指令节点</td>
+</tr>
+<tr>
+<td>Node.COMMENT_NODE</td>
+<td>8</td>
+<td>注释节点</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_NODE</td>
+<td>9</td>
+<td>文档节点（DOM树的根节点）</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_TYPE_NODE</td>
+<td>10</td>
+<td>向为文档定义的实体提供接口</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_FRAGMENT_NODE</td>
+<td>11</td>
+<td>表示邻接节点和它们的子树。</td>
+</tr>
+<tr>
+<td>Node.NOTATION_NODE</td>
+<td>12</td>
+<td>代表一个符号在DTD中的声明</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>firstChild：获取当前节点的第一个子节点</p>
+</li>
+<li><p>lastChild：获取当前节点的最后一个字节点</p>
+</li>
+<li><p>nextElementSibling：获取当前节点的下一个节点（兄弟节点）</p>
+</li>
+<li><p>previousElementSibling：获取当前节点的上一个节点（兄弟节点）</p>
+</li>
+<li><p>创建，删除，插入节点</p>
+</li>
+<li><ul>
+<li><ul>
+<li>创建：var 节点 = document.creatElement(“标签名”);创建新元素节点</li>
+<li>节点 .setAttribute(“属性名”,”属性值”);</li>
+<li>节点.appendChild(e);将某个节点添加到该节点的最后位置</li>
+<li>节点.insertBefore(e,child);将某个新节点添加到该节点中，某个子节点之前</li>
+<li>节点.removeChild(要删除的子节点)；删除指定的直接点</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><ul>
+<li>节点必须为直接父节点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><p>例</p>
+<pre><code>var    trNode = document.createElement(&quot;tr&quot;);
+var tdNode = document.createElement(&quot;td&quot;);
+trNode.appendChild(tdNode);
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>利用节点操作css</p>
+</li>
+<li><ul>
+<li>我们可以通过上边获取节点的方式获取到节点，我们可以通过节点对象去操作标签的的样式</li>
+<li>语法</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>节点.style.要操作的样式=”值”;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="JavaScript中常用的事件"><a href="#JavaScript中常用的事件" class="headerlink" title="JavaScript中常用的事件"></a>JavaScript中常用的事件</h4><ul>
+<li><p>js有可以通过某些方式触发函数的执行，我们把这种方式称之为事件</p>
+</li>
+<li><p>点击事件（onclick()）</p>
+</li>
+<li><ul>
+<li><p>案例</p>
+<pre><code>&lt;script&gt;
+function    sp(elementid)&#123;
+var    a = document.getElementById(elementid);
+a.style.background=&quot;red&quot;;
+&#125;
+&lt;/script&gt;
+&lt;title&gt;无标题文档&lt;/title&gt;
+&lt;/head&gt;
+ 
+&lt;body&gt;
+&lt;div    id=&quot;test&quot; nzmd=&quot;ElName&quot;    style=&quot;height:100px;&quot;&gt;
+               &lt;p    id=&quot;elp&quot; onclick=&quot;sp(&#39;elp&#39;)&quot;&gt;1&lt;/p&gt;
+        &lt;a id=&quot;ela&quot;    onclick=&quot;sp(&#39;ela&#39;)&quot;&gt;2&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>鼠标进入事件（onmouseover(),onmousemove()）</p>
+</li>
+<li><p>鼠标离开事件（onmouseout()）</p>
+</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+      .box&#123;
+        width: 200px;
+        height: 500px;
+        display: none;
+      &#125;
+      .boxOne&#123;
+        background-color: red;
+      &#125;
+      .boxTwo&#123;
+        background-color: aqua;
+      &#125;
+    &lt;/style&gt;
+    &lt;script&gt;
+      function show(idName) &#123;
+        //根据id获取要显示的元素
+        var el = document.getElementById(idName);
+        el.style.display = &quot;block&quot;;
+      &#125;
+      function hide(idName) &#123;
+        var el = document.getElementById(idName);
+        el.style.display = &quot;none&quot;;
+      &#125;
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!--悬停事件：鼠标进入元素后触发--&gt;
+    &lt;!--鼠标离开事件：鼠标离开元素后触发--&gt;
+    &lt;nav&gt;
+      &lt;a href=&quot;#&quot; onmousemove=&quot;show(&#39;one&#39;)&quot; onmouseout=&quot;hide(&#39;one&#39;)&quot;&gt;导航一&lt;/a&gt;
+      &lt;a href=&quot;#&quot; onmousemove=&quot;show(&#39;two&#39;)&quot; onmouseout=&quot;hide(&#39;two&#39;)&quot;&gt;导航二&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;box boxOne&quot; onmousemove=&quot;show(&#39;one&#39;)&quot; onmouseout=&quot;hide(&#39;one&#39;)&quot; id=&quot;one&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;box boxTwo&quot; onmousemove=&quot;show(&#39;two&#39;)&quot; onmouseout=&quot;hide(&#39;two&#39;)&quot; id=&quot;two&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li><p>获取焦点（onfocus()）</p>
+</li>
+<li><p>失去焦点（onblur()）</p>
+</li>
+<li><ul>
+<li><p>案例</p>
+<pre><code>&lt;script&gt;
+function    of()&#123;
+var    a = document.getElementById(&quot;eli&quot;);
+   a.value=&quot;&quot;;
+&#125;
+function    ob()&#123;
+var    a = document.getElementById(&quot;eli&quot;);
+   a.value=&quot;有字&quot;;
+&#125;
+&lt;/script&gt;
+&lt;title&gt;无标题文档&lt;/title&gt;
+&lt;/head&gt;
+ 
+&lt;body&gt;
+&lt;input    type=&quot;text&quot; onfocus=&quot;of()&quot; onblur=&quot;ob()&quot;    id=&quot;eli&quot;/&gt;
+&lt;/body&gt;
+&lt;script&gt;
+window.onload=function()&#123;
+    var    a = document.getElementById(&quot;eli&quot;);
+    a.onfocus=function()&#123;
+        a.placeholder=&quot;&quot;;
+   &#125;
+  a.onblur=function()&#123;
+      a.placeholder=&quot;有字&quot;;
+  &#125;
+&#125;
+&lt;/script&gt;
+&lt;title&gt;无标题文档&lt;/title&gt;
+&lt;/head&gt;
+ 
+&lt;body&gt;
+&lt;input    type=&quot;text&quot; id=&quot;eli&quot; placeholder=&quot;hello&quot;/&gt;
+&lt;/body&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>滚动事件(onscroll())</p>
+</li>
+<li><ul>
+<li><p>案例</p>
+<pre><code>&lt;style&gt;
+               #test&#123;
+width:100%;
+height:100px;
+overflow:scroll;
+border:1px    solid black;
+&#125;
+    &lt;/style&gt;
+&lt;script&gt;
+window.onload=function()&#123;
+var    a = document.getElementById(&quot;test&quot;);
+a.onscroll=function()&#123;
+a.innerHTML=&quot;aaaaaa&quot;;
+&#125;;
+&#125;;
+&lt;/script&gt;
+&lt;title&gt;无标题文档&lt;/title&gt;
+&lt;/head&gt;
+ 
+&lt;body&gt;
+&lt;div    id=&quot;test&quot; &gt;
+               啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+    &lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>键盘按下并松开（onkeypress()）</p>
+</li>
+<li><p>键盘按下事件（onkeydown()）</p>
+</li>
+<li><ul>
+<li>onkeypress 和 onkeydown 是有区别，下面将讲解 onkeypress 与 onkeydown 事件的区别。</li>
+<li>onkeypress 事件在用户按下并放开任何字母数字键时发生。但是系统按钮（例如：箭头键、功能键）无法得到识别。</li>
+<li>onkeydown 事件在用户按下任何键盘键（包括系统按钮）时发生。</li>
+<li>具体区别：</li>
+<li>\1. 一个放开一个没有放开，onkeydown 先于 onkeypress 发生。</li>
+<li>2.onkeypress 无法识别系统按钮。</li>
+<li>2.onkeydown 捕获的 keyCode 不区分字母大小，而 onkeypress 区分。</li>
+</ul>
+</li>
+<li><p>键盘抬起事件（onkeyup()）</p>
+</li>
+<li><ul>
+<li><p>案例</p>
+<pre><code>&lt;body&gt;
+&lt;input type=&quot;text&quot; id=&quot;txt&quot;&gt;
+&lt;script&gt;
+    document.getElementById(&quot;txt&quot;).onkeydown = function () &#123;
+        console.log(&quot;键盘按下了&quot;);
+    &#125;;
+    document.getElementById(&quot;txt&quot;).onkeyup = function () &#123;
+        console.log(&quot;键盘抬起了&quot;);
+    &#125;;
+&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>keyCode获取按下的键</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>数字值</strong></th>
+<th><strong>实际键值</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>48到57</td>
+<td>0到9</td>
+</tr>
+<tr>
+<td>65到90</td>
+<td>a到z（A到Z）</td>
+</tr>
+<tr>
+<td>112到135</td>
+<td>F1到F12</td>
+</tr>
+<tr>
+<td>8</td>
+<td>BackSpace（退格）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Tab</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Enter（回车）</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Caps_Lock（大写锁定）</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Space（空格键）</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Left（左箭头）</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Up（上箭头）</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Right（右箭头）</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Down（下箭头）</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>案例</p>
+<pre><code>&lt;script&gt;
+    //页面的任何的位置.按下键盘,获取按键的值
+    document.onkeydown = function (e) &#123;
+        switch (e.keyCode) &#123;
+            case 81:
+                console.log(&quot;您按下的是Q&quot;);
+                break;
+            case 87:
+                console.log(&quot;您按下的是W&quot;);
+                break;
+            case 69:
+                console.log(&quot;您按下的是E&quot;);
+                break;
+            case 82:
+                console.log(&quot;您按下的是R&quot;);
+                break;
+        &#125;
+    &#125;;
+&lt;/script&gt;
+</code></pre>
+</li>
+<li><p>onmousedown / onmouseup 鼠标按下/抬起事件</p>
+</li>
+<li><ul>
+<li>当鼠标左键或右键按下或者抬起的时候触发</li>
+<li>按下或抬起滚动轮也会触发，滑动滚动轮不能触发</li>
+<li>如果鼠标比较高级，有其他按键的情况下，按下或抬起也会触发</li>
+<li>案例</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        div &#123;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;dv&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    document.getElementById(&quot;dv&quot;).onmousedown = function () &#123;
+        console.log(&quot;鼠标按下了&quot;);
+    &#125;;
+    document.getElementById(&quot;dv&quot;).onmouseup = function () &#123;
+        console.log(&quot;鼠标抬起了&quot;);
+    &#125;;
+&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+        </article>
+
+        
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>xiguayaaaaa<br>
+    
+    <strong>本文链接：</strong><a href="https://xiguayaaaaa.github.io/2022/07/08/%E5%89%8D%E7%AB%AF/%E5%8D%81%E4%BA%8C-JavaScript-BOM%E4%B8%8EDOM/" title="https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;08&#x2F;%E5%89%8D%E7%AB%AF&#x2F;%E5%8D%81%E4%BA%8C-JavaScript-BOM%E4%B8%8EDOM&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;08&#x2F;%E5%89%8D%E7%AB%AF&#x2F;%E5%8D%81%E4%BA%8C-JavaScript-BOM%E4%B8%8EDOM&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%89%8D%E7%AB%AF%E7%BB%84/">前端组</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86/" rel="tag">知识</a>
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src="https://unpkg.com/leancloud-storage/dist/av-min.js"></script>
+<script src='https://unpkg.com/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'r5zxC0st0DDjPA9auXzMV7HY-gzGzoHsz',
+        appKey: '3bqCsovpyfTPHUzTHovd3V3V'
+    })
+</script>
+</section>
+    </div>
+</div>
+
+
+        <div class="nexmoe-post-right">
+          
+            <div class="nexmoe-fixed">
+              <div class="nexmoe-tool">
+                <a href="#" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  <div id="nexmoe-pendant">
+    <div class="nexmoe-drawer mdui-drawer nexmoe-pd" id="drawer">
+        
+            <div class="nexmoe-pd-item">
+                <div class="clock">
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="needle" id="hours"></div>
+        <div class="needle" id="minutes"></div>
+        <div class="needle" id="seconds"></div>
+        <div class="clock_logo">
+
+        </div>
+
+    </div>
+<style>
+    .clock {
+        background-color: #ffffff;
+        width: 70vw;
+        height: 70vw;
+        max-width: 70vh;
+        max-height: 70vh;
+        border: solid 2.8vw #242424;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0 1.4vw 2.8vw rgba(0, 0, 0, 0.8);
+        zoom:0.2
+    }
+
+    .memory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .memory:nth-child(1) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-520%);
+    }
+
+    .memory:nth-child(2) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(6deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(3) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(12deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(4) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(18deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(5) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(24deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(6) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-520%);
+    }
+
+    .memory:nth-child(7) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(36deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(8) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(42deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(9) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(48deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(10) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(54deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(11) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-520%);
+    }
+
+    .memory:nth-child(12) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(66deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(13) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(72deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(14) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(78deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(15) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(84deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(16) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-520%);
+    }
+
+    .memory:nth-child(17) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(96deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(18) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(102deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(19) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(108deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(20) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(114deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(21) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-520%);
+    }
+
+    .memory:nth-child(22) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(126deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(23) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(132deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(24) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(138deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(25) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(144deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(26) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-520%);
+    }
+
+    .memory:nth-child(27) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(156deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(28) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(162deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(29) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(168deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(30) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(174deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(31) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-520%);
+    }
+
+    .memory:nth-child(32) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(186deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(33) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(192deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(34) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(198deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(35) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(204deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(36) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-520%);
+    }
+
+    .memory:nth-child(37) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(216deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(38) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(222deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(39) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(228deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(40) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(234deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(41) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-520%);
+    }
+
+    .memory:nth-child(42) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(246deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(43) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(252deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(44) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(258deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(45) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(264deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(46) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-520%);
+    }
+
+    .memory:nth-child(47) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(276deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(48) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(282deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(49) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(288deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(50) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(294deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(51) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-520%);
+    }
+
+    .memory:nth-child(52) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(306deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(53) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(312deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(54) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(318deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(55) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(324deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(56) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-520%);
+    }
+
+    .memory:nth-child(57) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(336deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(58) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(342deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(59) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(348deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(60) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(354deg) translateY(-1461%);
+    }
+
+    .needle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .needle#hours {
+        background-color: #1f1f1f;
+        width: 4%;
+        height: 30%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#hours.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#hours:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#minutes {
+        background-color: #1f1f1f;
+        width: 2%;
+        height: 45%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#minutes.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#minutes:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#seconds {
+        background-color: #cb2f2f;
+        width: 1%;
+        height: 50%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#seconds.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#seconds:after {
+        content: '';
+        background-color: #cb2f2f;
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 2.5vh;
+        max-height: 2.5vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .clock_logo{
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 100vh) {
+        .clock {
+            border: solid 2.8vh #242424;
+            box-shadow: 0 1.4vh 2.8vh rgba(0, 0, 0, 0.8);
+        }
+    }
+
+</style>
+
+
+
+
+
+            </div>
+        
+            <div class="nexmoe-pd-item">
+                <div class="qweather" >
+    <div id="he-plugin-standard"></div>
+    <div class="qweather-logo">
+
+    </div>
+
+</div>
+<style>
+    .qweather{
+        position: relative;
+    }
+    .qweather-logo{
+        position: absolute;
+        right: 0;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+<script>
+  WIDGET = {
+    "CONFIG": {
+      "layout": "2",
+      "width": "260",
+      "height": "230",
+      "background": "5",
+      "dataColor": "e67249",
+      "borderRadius": "15",
+      "key": "f74d1e1690e6432d801e97fa2f05a162"
+    }
+  }
+</script>
+<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+
+            </div>
+        
+</div>
+<style>
+    .nexmoe-pd {
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+  </div>
+  <script src="https://unpkg.com/lazysizes@5.1.0/lazysizes.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/10.0.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/app.js?v=1659485766034"></script>
+
+<script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
+<script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+<script src="/lib/codeBlock/codeBlockFuction.js"></script>
+
+<script src="/lib/codeBlock/codeLang.js"></script>
+
+<script src="/lib/codeBlock/codeCopy.js"></script>
+
+<script src="/lib/codeBlock/codeShrink.js"></script>
+
+<link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/webapp.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":180,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f1c2dcc3.js","daovoice")</script>
+<script>
+  daovoice('init', {
+    app_id: "f1c2dcc3"
+  });
+  daovoice('update');
+</script>
+

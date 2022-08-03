@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+  <title>Java常见的排序算法 - xigua</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+
+  <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
+  <meta name="description" content="Java常见得的排序算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java常见的排序算法">
+<meta property="og:url" content="https://xiguayaaaaa.github.io/2022/07/19/Java/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="xigua">
+<meta property="og:description" content="Java常见得的排序算法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://files.catbox.moe/a0pb5h.gif">
+<meta property="og:image" content="https://files.catbox.moe/6jqfd2.gif">
+<meta property="og:image" content="https://files.catbox.moe/hzemg8.gif">
+<meta property="og:image" content="https://files.catbox.moe/dcwsxe.gif">
+<meta property="og:image" content="https://files.catbox.moe/vgdxh9.png">
+<meta property="og:image" content="https://files.catbox.moe/1woylv.gif">
+<meta property="og:image" content="https://files.catbox.moe/qny6e5.png">
+<meta property="og:image" content="https://files.catbox.moe/sjhakg.png">
+<meta property="og:image" content="https://files.catbox.moe/k81cpb.png">
+<meta property="og:image" content="https://files.catbox.moe/c75luj.png">
+<meta property="og:image" content="https://files.catbox.moe/iqrgu4.gif">
+<meta property="og:image" content="https://files.catbox.moe/zqtid2.png">
+<meta property="og:image" content="https://files.catbox.moe/k6m6q4.png">
+<meta property="og:image" content="https://files.catbox.moe/5leo7q.png">
+<meta property="article:published_time" content="2022-07-19T12:48:16.000Z">
+<meta property="article:modified_time" content="2022-08-02T11:28:35.500Z">
+<meta property="article:author" content="xiguayaaaaa">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://files.catbox.moe/a0pb5h.gif">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+  <link rel="stylesheet" href="/lib/fancybox/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1659485766024">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/images/background/1.jpg)"></div>
+    <div class="nexmoe-small" style="background-image: url(/images/background/lihui2.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="xiguayaaaaa" class="mdui-btn mdui-btn-icon"><img src="/images/head/call.jpg" alt="xiguayaaaaa"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="xiguayaaaaa">
+            <img src="/images/head/call.jpg" alt="xiguayaaaaa" alt="xiguayaaaaa">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div class="nexmoe-count-item"><span>文章</span>27 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>4<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>7<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-meishi"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-hanbao1"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://airui520.github.io" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-cola"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  
+<!-- 站内搜索 -->
+
+<div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search" >
+        <form id="search-form">
+            <label><input type="text" id="local-search-input" name="q" results="0" placeholder="站内搜索" class="input form-control" autocomplete="off" autocorrect="off"/></label>
+            <!-- 清空/重置搜索框 -->
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+        </form>
+    </div>
+    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+    <!-- <p class='no-result'></p> 无匹配时显示，注意在 CSS 中设置默认隐藏 -->
+</div>
+
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=127752475&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(64, 196, 255);background-color: rgba(64, 196, 255, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="mailto:1281238306@qq.com" target="_blank" mdui-tooltip="{content: 'mail'}" style="color: rgb(249,8,8);background-color: rgba(249,8,8,.1);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a><a class="mdui-ripple" href="https://i.csdn.net/#/user-center/profile?spm=1011.2124.3001.5111" target="_blank" mdui-tooltip="{content: 'CSDN'}" style="color: rgb(199,29,35);background-color: rgba(199,29,35,.1);">
+            <i class="nexmoefont icon-csdn"></i>
+        </a><a class="mdui-ripple" href="https://www.cnblogs.com/" target="_blank" mdui-tooltip="{content: '博客园'}" style="color: rgb(66, 214, 29);background-color: rgba(66, 214, 29, .1);">
+            <i class="nexmoefont icon-bokeyuan"></i>
+        </a><a class="mdui-ripple" href="https://github.com/xiguayaaaaa/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://gitee.com" target="_blank" mdui-tooltip="{content: 'gitee'}" style="color: rgb(255, 255, 255);background-color: rgb(199,29,35);">
+            <i class="nexmoefont icon-mayun"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/SpringBoot/">SpringBoot</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/兴趣组/">兴趣组</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/前端组/">前端组</a>
+          <span class="category-list-count">12</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/后端组/">后端组</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/日志/">日志</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/知识组/">知识组</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/问题组/">问题组</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/%E7%9E%8E%E5%86%99%E7%9A%84/" style="font-size: 16.67px;">瞎写的</a> <a href="/tags/%E7%9F%A5%E8%AF%86/" style="font-size: 20px;">知识</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">27</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/02/0802%E6%97%A5%E5%BF%97/">集合框架笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/28/0728%E6%97%A5%E5%BF%97/">0728日志</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/27/0727%E6%97%A5%E5%BF%97/">0727日志</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/22/Java/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E5%BE%81/">第六章 面向对象的特征</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/20/%E5%85%B6%E4%BB%96/%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0GitHub/">本地文件上传GitHub</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 xiguayaaaaa
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/tangyuxian/hexo-theme-tangyuxian" target="_blank">Tangyuxian</a><br/>
+        <a href="http://beian.miit.gov.cn" target="_blank">所谓伊人，在水一方</a><br/>
+        
+        <div style="font-size: 12px">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br />
+            本站访客数<a id="busuanzi_value_site_uv"></a>人次
+        </div>
+        
+        
+    </div>
+
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    
+        <div class="nexmoe-post-cover" style="padding-bottom: 43.333333333333336%;">
+            <img data-src="/images/post/three.jpg" data-sizes="auto" alt="Java常见的排序算法" class="lazyload">
+            <h1>Java常见的排序算法</h1>
+        </div>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年07月19日</a>
+    <a><i class="nexmoefont icon-areachart"></i>4.3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 20 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
+            
+        </div>
+
+        <article>
+            <p> Java常见得的排序算法<br> <span id="more"></span></p>
+<h1 id="Java常见得的排序算法"><a href="#Java常见得的排序算法" class="headerlink" title="Java常见得的排序算法"></a>Java常见得的排序算法</h1><h2 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h2><ol>
+<li><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</p>
+</li>
+<li><p>对每一对相邻元素放同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</p>
+</li>
+<li><p>针对所有的元素重复以上的步骤，除了最后一个。</p>
+</li>
+<li><p>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+</li>
+</ol>
+<p><img src="https://files.catbox.moe/a0pb5h.gif"></p>
+<pre><code class="java">public static void main(String[] args) &#123;
+        int[] a = &#123;6,9,7,3,1&#125;;
+        for (int i = 0; i &lt; a.length-1; i++) &#123;
+            for (int j = 0; j &lt; a.length-i-1; j++) &#123;
+                if(a[j]&gt;a[j+1]) &#123;
+                    int temp =a[j];
+                    a[j] = a[j+1];
+                    a[j+1] =temp;
+                &#125;
+            &#125;
+        &#125;
+        System.out.println(Arrays.toString(a));
+&#125;
+</code></pre>
+<h2 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h2><ol>
+<li>在长度为N的无序数组中，第一次遍历-1个数，找到最小的数与第一个元素交换</li>
+<li>第二次遍历-2个数，找到最小的数值与第二个元素交换</li>
+<li>重复以上步骤</li>
+<li>第n-1次遍历，找到最小的数值与第n-1的元素交换，排序完成</li>
+</ol>
+<p><img src="https://files.catbox.moe/6jqfd2.gif"></p>
+<pre><code class="java">public static void main(String[] args) &#123;
+        int[] a = &#123;8,2,3,17,23,85,1,9&#125;;
+        for (int i = 0; i &lt; a.length; i++) &#123;
+            //定义此轮循环最小数放置的位置
+            int minIndex = i;
+            //从第2个数依次和后面的数进行对比
+            for (int j = i+1; j &lt; a.length; j++) &#123;
+                //如果minIndex的数比j大则记录j
+                if(a[minIndex]&gt;a[j]) &#123;
+                    minIndex=j;
+                &#125;
+            &#125;
+            if(minIndex!=i)&#123;
+                int temp = a[minIndex];
+                a[minIndex] = a[i];
+                a[i] = temp;
+                System.out.println(&quot;每次结果&gt;&gt;&gt;&quot;+Arrays.toString(a));
+            &#125;
+            System.out.println(&quot;每轮结果===&quot;+Arrays.toString(a));
+        &#125;
+    &#125;
+</code></pre>
+<h2 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h2><ol>
+<li>在要排序的无序数组中，假定-1个数已经排好序，现在将第个数插入到前面的有序数列中，使得这个个数也是拍好序的，反复循环，直到全部排好顺序。插入排序也可以理解为从第二个数开始，前面的相邻的数依次两两对比，如果后面的数比前面的数小，则交换位置。(如果实在理解不了，可以类比冒泡排序，把插入排序理解为一种特殊的冒泡排序）</li>
+</ol>
+<p><img src="https://files.catbox.moe/hzemg8.gif"></p>
+<pre><code class="java">public static void main(String[] args) &#123;
+        int[] a = &#123;87,86,82,10,30&#125;;
+        for (int i = 0; i &lt; a.length-1; i++) &#123;
+            for (int j = i+1; j &gt;0; j--) &#123;
+                if(a[j]&lt;a[j-1]) &#123;
+                    int temp = a[j];
+                    a[j] = a[j-1];
+                    a[j-1] = temp;
+                &#125;else&#123;
+                    break;   
+                &#125;
+                System.out.println(&quot;每次结果===&quot;+Arrays.toString(a));
+            &#125;
+            System.out.println(&quot;第&quot;+(i+1)+&quot;轮结果&gt;&gt;&gt;&quot;+Arrays.toString(a));
+        &#125;
+    &#125;
+</code></pre>
+<h2 id="4-快速排序"><a href="#4-快速排序" class="headerlink" title="4.快速排序"></a>4.快速排序</h2><p>快速排序有两种实现方式：双边循环法和挖坑法，思路如下：</p>
+<h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><ol>
+<li>定义左右指针，并选取一个数作为基准（通常选择数组第一个）</li>
+<li>移动右指针，如果右指针的数小于基准数，则停止移动，反之则继续移动</li>
+<li>移动左指针，如果左指针的数大于基准数，则停止移动，反之则继续移动</li>
+<li>当左右指针都停止移动时交换左右指针处的数</li>
+<li>当左右两个指针停在相同位置时，交换指针处的数和基准数的位置</li>
+<li>将数组以左右指针位置处一分为二重复上述步骤。</li>
+</ol>
+<pre><code class="Java">public class QuickSort &#123;
+    /**
+     * 双边循环
+     * @return
+     */
+    public static int pivotIndex(int[]ary,int startIndex,int endIndex) &#123;
+        //保存左右两个指针，从第一个元素和最后一个元素开始
+        int left = startIndex;
+        int right = endIndex;
+        //获取基准，一般选择数组第一个数
+        int pivot = ary[startIndex];
+        //大循环，当左右两个指针不相等时，左指针右移，右指针左移
+        while (left!=right) &#123;
+            //右边指针向左移动，当对应元素大于基准数时继续移动，小于基准数时停止移动
+            while(right&gt;left&amp;&amp;ary[right]&gt;=pivot) &#123;
+                right--;
+            &#125;
+            //左边指针向右移动，当小于基准数时继续移动，大于基准数时停止移动
+            while (right&gt;left&amp;&amp;ary[left]&lt;=pivot) &#123;
+                left++;
+            &#125;
+            //此时如果左边指针小于右边指针时；左右指针交换元素
+            if(left&lt;right) &#123;
+                int temp = ary[right];
+                ary[right] = ary[left];
+                ary[left] = temp;
+            &#125;
+        &#125;
+        int index = left;
+        //如果两个指针相等时,交换基准元素和当前位置的数
+        ary[startIndex] = ary[index];
+        ary[index] = pivot;
+        return index;
+    &#125;
+    public static void qucikSort(int[] ary,int startIndex,int endIndex) &#123;
+        if(startIndex&gt;endIndex) &#123;
+            return;
+        &#125;
+        int index = pivotIndex(ary,startIndex,endIndex);
+        qucikSort(ary, startIndex, index-1);
+        qucikSort(ary, index+1, endIndex);
+    &#125;
+    public static void main(String[] args) &#123;
+        int[] a= &#123;5,6,1,2,4,9,3&#125;;
+        qucikSort(a, 0, a.length-1);
+        System.out.println(Arrays.toString(a));
+    &#125;
+&#125;
+</code></pre>
+<h5 id="挖坑法"><a href="#挖坑法" class="headerlink" title="挖坑法"></a>挖坑法</h5><ol>
+<li>选取起始位置作为标记位（也就是坑），选取一个数作为基准，通常是数组第一个</li>
+<li>从数组第二数开始依次和基准数对比，如果比基准数小，则扩大小于基准数的区间，也就是mark++,并将该数与标mark处的数交换</li>
+<li>循环结束后，将mark处的数和基准数进行交换</li>
+<li>以mark为界，将数组一分为二重复上述步骤</li>
+</ol>
+<p><img src="https://files.catbox.moe/dcwsxe.gif"></p>
+<pre><code class="Java">/**
+ * 单边循环
+ * @author MR.W
+ */
+public class QucikSort2 &#123;
+    public static int pivotIndex(int[] ary,int startIndex,int endIndex) &#123;
+        int mark = startIndex;
+        int pivot = ary[startIndex];
+        for (int i = startIndex+1; i &lt;= endIndex; i++) &#123;
+            //如果指针指向的元素小于基准元素，干两件事情
+            //1.mark+1,扩大小于基准数的区间
+            //2.将指针所指向的数和mark位置处的数进行交换
+            if(ary[i]&lt;pivot) &#123;
+                mark++;
+                int temp = ary[i];
+                ary[i] = ary[mark];
+                ary[mark] = temp;
+            &#125;
+        &#125;
+        //当循环结束时将mark位置的数和基准数进行交换
+        ary[startIndex]= ary[mark]; 
+        ary[mark] = pivot;
+        return mark;
+    &#125;
+    public static void quickSort(int[] ary,int startIndex,int endIndex) &#123;
+        if(startIndex&gt;endIndex) &#123;
+            return;
+        &#125;
+        int index = pivotIndex(ary, startIndex, endIndex);
+        quickSort(ary, startIndex, index-1);
+        quickSort(ary, index+1, endIndex);
+    &#125;
+    public static void main(String[] args) &#123;
+        int [] a = &#123;7,9,1,4,8&#125;;
+        quickSort(a, 0, a.length-1);
+        System.out.println(Arrays.toString(a));
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="java">public static void main(String[] args) &#123;
+        
+        int [] a = &#123;5,1,6,2,3&#125;;
+        
+        for (int i = 0; i &lt; a.length; i++) &#123;
+            for (int j = 0; j &lt; a.length-1; j++) &#123;
+                int temp;
+                if(a[i]&lt;a[j]) &#123;
+                    temp = a[j];
+                    a[j] = a[i];
+                    a[i] = temp;
+                &#125;
+                System.out.println(&quot;每次&quot;+Arrays.toString(a));
+            &#125;
+            System.out.println(&quot;每轮&quot;+Arrays.toString(a));
+        &#125;
+        System.out.println(&quot;最后&quot;+Arrays.toString(a));
+    &#125;
+</code></pre>
+<h3 id="5-希尔排序"><a href="#5-希尔排序" class="headerlink" title="5.希尔排序"></a>5.希尔排序</h3><p>希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。<br><img src="https://files.catbox.moe/vgdxh9.png"></p>
+<pre><code class="java">public class ShellSort &#123;    
+    public static int[] shellSort(int ary[],int length)&#123;
+        int temp = 0;
+        int gap = length;
+        while(true)&#123;
+            gap = gap/2;
+            //根据增量将数组分为若干子序列
+            //K表示第几个子序列
+            for(int k = 0;k&lt;gap;k++)&#123;
+                //对子序列插入排序
+                for(int i = k+gap;i&lt;length;i+=gap)&#123;
+                    //因为是相隔gap的元素插入排序，所以j-=jap
+                    for(int j=i;j&gt;k;j-=gap)&#123;
+                        if(ary[j]&lt;ary[j-gap])&#123;
+                             temp = ary[j-gap];
+                             ary[j-gap] = ary[j];
+                             ary[j] = temp;
+                        &#125;else&#123;
+                            break;
+                        &#125;
+                        System.out.println(&quot;每次结果：&gt;&gt;&gt;&quot;+Arrays.toString(ary)); 
+                    &#125;
+                System.out.println(&quot;每轮结果：---&quot;+Arrays.toString(ary));
+                &#125;
+            &#125;
+            if(gap==1)&#123;
+                break;
+            &#125;
+        &#125;
+        return ary;
+    &#125;
+
+    public static void main(String[] args) &#123;
+        int[] ary = &#123;3,8,9,1,2,5,7,6&#125;;
+        System.out.println(Arrays.toString(shellSort(ary, ary.length)));
+    &#125;
+
+&#125;
+</code></pre>
+<h3 id="6-基数排序"><a href="#6-基数排序" class="headerlink" title="6.基数排序"></a>6.基数排序</h3><p>基数排序的思路非常简单，首先创建数组，然后将每个数放到相应的位置（例如6放在下标为6的数组位置）；最后遍历数组，即为排序后的结果。</p>
+<ol>
+<li>基数排序先排好个位，然后排好在排好个位的基础上排十位，以此类推，直到遍历最高位次，排序结束。</li>
+<li>基数排序不是比较排序，而是通过分配和收集的过程来实现排序。</li>
+<li>初始化10个桶，桶下标为0-9</li>
+<li>通过得到待排序数字的个十百等位的数字，把这个数字对应的item放到对应的桶中</li>
+<li>基数排序有两种排序方式：LSD和MSD，最小位有限（从右边开始）和最大位优先（从左边开始）。</li>
+</ol>
+<p><img src="https://files.catbox.moe/1woylv.gif"></p>
+<pre><code class="java">public class RadixSort &#123;
+private static void radixSort(int[] array,int d)
+&#123;
+    int n=1;//代表位数对应的数：1,10,100...
+    int k=0;//保存每一位排序后的结果用于下一位的排序输入
+    int length=array.length;
+    int[][] bucket=new int[10][length];//排序桶用于保存每次排序后的结果，这一位上排序结果相同的数字放在同一个桶里
+    int[] order=new int[length];//用于保存每个桶里有多少个数字
+    while(n&lt;d)
+    &#123;
+        for(int num:array) //将数组array里的每个数字放在相应的桶里
+        &#123;
+            int digit=(num/n)%10;
+            bucket[digit][order[digit]]=num;
+            order[digit]++;
+        &#125;
+        for(int i=0;i&lt;length;i++)//将前一个循环生成的桶里的数据覆盖到原数组中用于保存这一位的排序结果
+        &#123;
+            if(order[i]!=0)//这个桶里有数据，从上到下遍历这个桶并将数据保存到原数组中
+            &#123;
+                for(int j=0;j&lt;order[i];j++)
+                &#123;
+                    array[k]=bucket[i][j];
+                    k++;
+                &#125;
+            &#125;
+            order[i]=0;//将桶里计数器置0，用于下一次位排序
+        &#125;
+        n*=10;
+        k=0;//将k置0，用于下一轮保存位排序结果
+    &#125;
+&#125;
+</code></pre>
+<h3 id="7-归并排序"><a href="#7-归并排序" class="headerlink" title="7.归并排序"></a>7.归并排序</h3><p>归并排序（MERGE-SORT）是利用<strong>归并</strong>的思想实现的排序方法，该算法采用经典的<strong>分治</strong>（divide-and-conquer）策略（分治法将问题<strong>分</strong>(divide)成一些小的问题然后递归求解，而**治(conquer)**的阶段则将分的阶段得到的各答案”修补”在一起，即分而治之)。</p>
+<ol>
+<li>把长度为n的数组分成两个长度为n/2的子序列</li>
+<li>对这两个子数组分别采用归并排序</li>
+<li>将两个排序号的子数组合并成一个最终的排序数组</li>
+</ol>
+<p>首先考虑下如何将2个有序数列合并。这个非常简单，只要从比较2个数列的第一个数，谁小就先取谁。<br><img src="https://files.catbox.moe/qny6e5.png"></p>
+<p><img src="https://files.catbox.moe/sjhakg.png"></p>
+<pre><code class="java">import java.util.Arrays;
+
+public class MergeSort &#123;
+    public static void sort(int ary[])&#123;
+        int[] temp = new int[ary.length];
+        sort(ary,0,ary.length-1,temp);
+    &#125;
+
+    public static void sort(int[] ary,int left,int right,int[] temp)&#123;
+        if(left&lt;right)&#123;
+            int mid = (left+right)/2;
+            //左侧子数组归并排序
+            sort(ary,left,mid,temp);
+            //右侧子数组归并排序
+            sort(ary,mid+1,right,temp);
+            //合并子数组
+            merge(ary, left, mid, right, temp);
+        &#125;
+    &#125;
+
+    private static void merge(int[] ary,int left,int mid,int right,int[]temp)&#123;
+        //左指针序列
+        int i = left;
+        //右指针序列
+        int j = mid+1;
+        //临时指针
+        int t = 0;
+        while(i &lt;= mid &amp;&amp; j &lt;= right)&#123;
+            if(ary[i]&lt;=ary[j])&#123;
+                temp[t++]=ary[i++];
+            &#125;else&#123;
+                temp[t++]=ary[j++];
+            &#125;
+        &#125;
+        //将左边剩余的元素填充进temp中
+        while(i&lt;=mid)&#123;
+            temp[t++]=ary[i++];
+        &#125;
+        //将右边剩余元素填充进temp中
+        while(j&lt;=right)&#123;
+            temp[t++] = ary[j++];
+        &#125;
+        t = 0;
+        //将temp中的元素全部拷贝到原数组
+        while(left&lt;=right)&#123;
+            ary[left++] = temp[t++];
+        &#125;
+    &#125;
+    public static void main(String[] args) &#123;
+        int []arr = &#123;9,8,7,6,5,4,3,2,1&#125;;
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
+    &#125;
+&#125;
+</code></pre>
+<h3 id="8-堆排序"><a href="#8-堆排序" class="headerlink" title="8.堆排序"></a>8.堆排序</h3><p>堆排序是利用<strong>堆</strong>这种数据结构而设计的一种排序算法，堆排序是一种<strong>选择排序，</strong>它的最坏，最好，平均时间复杂度均为O(nlogn)<br><strong>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。如下图：</strong><br><img src="https://files.catbox.moe/k81cpb.png"><br>同时，我们对堆中的结点按层进行编号，将这种逻辑结构映射到数组中就是下面这个样子</p>
+<p><img src="https://files.catbox.moe/c75luj.png"></p>
+<p>该数组从逻辑上讲就是一个堆结构，我们用简单的公式来描述一下堆的定义就是：<br>**大顶堆：arr[i] &gt;= arr[2i+1] &amp;&amp; arr[i] &gt;= arr[2i+2] **<br>**小顶堆：arr[i] &lt;= arr[2i+1] &amp;&amp; arr[i] &lt;= arr[2i+2] **<br><strong>堆排序的基本思想是：将待排序序列构造成一个大顶堆，此时，整个序列的最大值就是堆顶的根节点。将其与末尾元素进行交换，此时末尾就为最大值。然后将剩余n-1个元素重新构造成一个堆，这样会得到n个元素的次小值。如此反复执行，便能得到一个有序序列了。</strong></p>
+<pre><code class="java">public class HeapSort implements IArraySort &#123;
+
+    @Override
+    public int[] sort(int[] sourceArray) throws Exception &#123;
+        // 对 arr 进行拷贝，不改变参数内容
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+
+        int len = arr.length;
+
+        buildMaxHeap(arr, len);
+
+        for (int i = len - 1; i &gt; 0; i--) &#123;
+            swap(arr, 0, i);
+            len--;
+            heapify(arr, 0, len);
+        &#125;
+        return arr;
+    &#125;
+
+    private void buildMaxHeap(int[] arr, int len) &#123;
+        for (int i = (int) Math.floor(len / 2); i &gt;= 0; i--) &#123;
+            heapify(arr, i, len);
+        &#125;
+    &#125;
+
+    private void heapify(int[] arr, int i, int len) &#123;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        int largest = i;
+
+        if (left &lt; len &amp;&amp; arr[left] &gt; arr[largest]) &#123;
+            largest = left;
+        &#125;
+
+        if (right &lt; len &amp;&amp; arr[right] &gt; arr[largest]) &#123;
+            largest = right;
+        &#125;
+
+        if (largest != i) &#123;
+            swap(arr, i, largest);
+            heapify(arr, largest, len);
+        &#125;
+    &#125;
+
+    private void swap(int[] arr, int i, int j) &#123;
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    &#125;
+
+&#125;
+</code></pre>
+<h3 id="9-计数排序"><a href="#9-计数排序" class="headerlink" title="9.计数排序"></a>9.计数排序</h3><p>计数排序的核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。<br>\1. 计数排序的特征<br>当输入的元素是 n 个 0 到 k 之间的整数时，它的运行时间是 O(n + k)。计数排序不是比较排序，排序的速度快于任何比较排序算法。<br>由于用来计数的数组C的长度取决于待排序数组中数据的范围（等于待排序数组的最大值与最小值的差加上1），这使得计数排序对于数据范围很大的数组，需要大量时间和内存。例如：计数排序是用来排序0到100之间的数字的最好的算法，但是它不适合按字母顺序排序人名。但是，计数排序可以用在基数排序中的算法来排序数据范围很大的数组。<br>通俗地理解，例如有 10 个年龄不同的人，统计出有 8 个人的年龄比 A 小，那 A 的年龄就排在第 9 位,用这个方法可以得到其他每个人的位置,也就排好了序。当然，年龄有重复时需要特殊处理（保证稳定性），这就是为什么最后要反向填充目标数组，以及将每个数字的统计减去 1 的原因。<br>算法的步骤如下：<br><img src="https://files.catbox.moe/iqrgu4.gif"></p>
+<pre><code class="java">public class CountingSort implements IArraySort &#123;
+
+    @Override
+    public int[] sort(int[] sourceArray) throws Exception &#123;
+        // 对 arr 进行拷贝，不改变参数内容
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+
+        int maxValue = getMaxValue(arr);
+
+        return countingSort(arr, maxValue);
+    &#125;
+
+    private int[] countingSort(int[] arr, int maxValue) &#123;
+        int bucketLen = maxValue + 1;
+        int[] bucket = new int[bucketLen];
+
+        for (int value : arr) &#123;
+            bucket[value]++;
+        &#125;
+
+        int sortedIndex = 0;
+        for (int j = 0; j &lt; bucketLen; j++) &#123;
+            while (bucket[j] &gt; 0) &#123;
+                arr[sortedIndex++] = j;
+                bucket[j]--;
+            &#125;
+        &#125;
+        return arr;
+    &#125;
+
+    private int getMaxValue(int[] arr) &#123;
+        int maxValue = arr[0];
+        for (int value : arr) &#123;
+            if (maxValue &lt; value) &#123;
+                maxValue = value;
+            &#125;
+        &#125;
+        return maxValue;
+    &#125;
+
+&#125;
+</code></pre>
+<h3 id="10-桶排序"><a href="#10-桶排序" class="headerlink" title="10.桶排序"></a>10.桶排序</h3><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。为了使桶排序更加高效，我们需要做到这两点：</p>
+<ol>
+<li>在额外空间充足的情况下，尽量增大桶的数量</li>
+<li>使用的映射函数能够将输入的 N 个数据均匀的分配到 K 个桶中</li>
+</ol>
+<p>同时，对于桶中元素的排序，选择何种比较排序算法对于性能的影响至关重要。<br>元素分配在桶中：<br><img src="https://files.catbox.moe/zqtid2.png"><br>然后，元素在每个桶中排序：<br><img src="https://files.catbox.moe/k6m6q4.png">originHeight=131&amp;originWidth=311&amp;size=12936&amp;status=done&amp;style=none&amp;width=311)</p>
+<pre><code class="java">public class BucketSort implements IArraySort &#123;
+
+    private static final InsertSort insertSort = new InsertSort();
+
+    @Override
+    public int[] sort(int[] sourceArray) throws Exception &#123;
+        // 对 arr 进行拷贝，不改变参数内容
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+
+        return bucketSort(arr, 5);
+    &#125;
+
+    private int[] bucketSort(int[] arr, int bucketSize) throws Exception &#123;
+        if (arr.length == 0) &#123;
+            return arr;
+        &#125;
+
+        int minValue = arr[0];
+        int maxValue = arr[0];
+        for (int value : arr) &#123;
+            if (value &lt; minValue) &#123;
+                minValue = value;
+            &#125; else if (value &gt; maxValue) &#123;
+                maxValue = value;
+            &#125;
+        &#125;
+
+        int bucketCount = (int) Math.floor((maxValue - minValue) / bucketSize) + 1;
+        int[][] buckets = new int[bucketCount][0];
+
+        // 利用映射函数将数据分配到各个桶中
+        for (int i = 0; i &lt; arr.length; i++) &#123;
+            int index = (int) Math.floor((arr[i] - minValue) / bucketSize);
+            buckets[index] = arrAppend(buckets[index], arr[i]);
+        &#125;
+
+        int arrIndex = 0;
+        for (int[] bucket : buckets) &#123;
+            if (bucket.length &lt;= 0) &#123;
+                continue;
+            &#125;
+            // 对每个桶进行排序，这里使用了插入排序
+            bucket = insertSort.sort(bucket);
+            for (int value : bucket) &#123;
+                arr[arrIndex++] = value;
+            &#125;
+        &#125;
+
+        return arr;
+    &#125;
+
+    /**
+     * 自动扩容，并保存数据
+     *
+     * @param arr
+     * @param value
+     */
+    private int[] arrAppend(int[] arr, int value) &#123;
+        arr = Arrays.copyOf(arr, arr.length + 1);
+        arr[arr.length - 1] = value;
+        return arr;
+    &#125;
+
+&#125;
+</code></pre>
+<h3 id="常见排序的复杂度"><a href="#常见排序的复杂度" class="headerlink" title="常见排序的复杂度"></a>常见排序的复杂度</h3><p><img src="https://files.catbox.moe/5leo7q.png"></p>
+
+        </article>
+
+        
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>xiguayaaaaa<br>
+    
+    <strong>本文链接：</strong><a href="https://xiguayaaaaa.github.io/2022/07/19/Java/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;19&#x2F;Java&#x2F;Java%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xiguayaaaaa.github.io&#x2F;2022&#x2F;07&#x2F;19&#x2F;Java&#x2F;Java%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%90%8E%E7%AB%AF%E7%BB%84/">后端组</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Java/" rel="tag">Java</a>
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src="https://unpkg.com/leancloud-storage/dist/av-min.js"></script>
+<script src='https://unpkg.com/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'r5zxC0st0DDjPA9auXzMV7HY-gzGzoHsz',
+        appKey: '3bqCsovpyfTPHUzTHovd3V3V'
+    })
+</script>
+</section>
+    </div>
+</div>
+
+
+        <div class="nexmoe-post-right">
+          
+            <div class="nexmoe-fixed">
+              <div class="nexmoe-tool">
+                <a href="#" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  <div id="nexmoe-pendant">
+    <div class="nexmoe-drawer mdui-drawer nexmoe-pd" id="drawer">
+        
+            <div class="nexmoe-pd-item">
+                <div class="clock">
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="needle" id="hours"></div>
+        <div class="needle" id="minutes"></div>
+        <div class="needle" id="seconds"></div>
+        <div class="clock_logo">
+
+        </div>
+
+    </div>
+<style>
+    .clock {
+        background-color: #ffffff;
+        width: 70vw;
+        height: 70vw;
+        max-width: 70vh;
+        max-height: 70vh;
+        border: solid 2.8vw #242424;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0 1.4vw 2.8vw rgba(0, 0, 0, 0.8);
+        zoom:0.2
+    }
+
+    .memory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .memory:nth-child(1) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-520%);
+    }
+
+    .memory:nth-child(2) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(6deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(3) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(12deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(4) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(18deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(5) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(24deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(6) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-520%);
+    }
+
+    .memory:nth-child(7) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(36deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(8) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(42deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(9) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(48deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(10) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(54deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(11) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-520%);
+    }
+
+    .memory:nth-child(12) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(66deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(13) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(72deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(14) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(78deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(15) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(84deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(16) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-520%);
+    }
+
+    .memory:nth-child(17) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(96deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(18) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(102deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(19) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(108deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(20) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(114deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(21) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-520%);
+    }
+
+    .memory:nth-child(22) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(126deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(23) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(132deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(24) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(138deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(25) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(144deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(26) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-520%);
+    }
+
+    .memory:nth-child(27) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(156deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(28) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(162deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(29) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(168deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(30) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(174deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(31) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-520%);
+    }
+
+    .memory:nth-child(32) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(186deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(33) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(192deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(34) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(198deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(35) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(204deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(36) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-520%);
+    }
+
+    .memory:nth-child(37) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(216deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(38) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(222deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(39) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(228deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(40) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(234deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(41) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-520%);
+    }
+
+    .memory:nth-child(42) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(246deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(43) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(252deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(44) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(258deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(45) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(264deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(46) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-520%);
+    }
+
+    .memory:nth-child(47) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(276deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(48) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(282deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(49) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(288deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(50) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(294deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(51) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-520%);
+    }
+
+    .memory:nth-child(52) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(306deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(53) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(312deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(54) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(318deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(55) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(324deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(56) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-520%);
+    }
+
+    .memory:nth-child(57) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(336deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(58) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(342deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(59) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(348deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(60) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(354deg) translateY(-1461%);
+    }
+
+    .needle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .needle#hours {
+        background-color: #1f1f1f;
+        width: 4%;
+        height: 30%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#hours.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#hours:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#minutes {
+        background-color: #1f1f1f;
+        width: 2%;
+        height: 45%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#minutes.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#minutes:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#seconds {
+        background-color: #cb2f2f;
+        width: 1%;
+        height: 50%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#seconds.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#seconds:after {
+        content: '';
+        background-color: #cb2f2f;
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 2.5vh;
+        max-height: 2.5vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .clock_logo{
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 100vh) {
+        .clock {
+            border: solid 2.8vh #242424;
+            box-shadow: 0 1.4vh 2.8vh rgba(0, 0, 0, 0.8);
+        }
+    }
+
+</style>
+
+
+
+
+
+            </div>
+        
+            <div class="nexmoe-pd-item">
+                <div class="qweather" >
+    <div id="he-plugin-standard"></div>
+    <div class="qweather-logo">
+
+    </div>
+
+</div>
+<style>
+    .qweather{
+        position: relative;
+    }
+    .qweather-logo{
+        position: absolute;
+        right: 0;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+<script>
+  WIDGET = {
+    "CONFIG": {
+      "layout": "2",
+      "width": "260",
+      "height": "230",
+      "background": "5",
+      "dataColor": "e67249",
+      "borderRadius": "15",
+      "key": "f74d1e1690e6432d801e97fa2f05a162"
+    }
+  }
+</script>
+<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+
+            </div>
+        
+</div>
+<style>
+    .nexmoe-pd {
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+  </div>
+  <script src="https://unpkg.com/lazysizes@5.1.0/lazysizes.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/10.0.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/app.js?v=1659485766025"></script>
+
+<script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
+<script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+<script src="/lib/codeBlock/codeBlockFuction.js"></script>
+
+<script src="/lib/codeBlock/codeLang.js"></script>
+
+<script src="/lib/codeBlock/codeCopy.js"></script>
+
+<script src="/lib/codeBlock/codeShrink.js"></script>
+
+<link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/webapp.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":180,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f1c2dcc3.js","daovoice")</script>
+<script>
+  daovoice('init', {
+    app_id: "f1c2dcc3"
+  });
+  daovoice('update');
+</script>
+
